@@ -1,0 +1,1 @@
+export { WaitingDetail } from "./WaitingDetail";

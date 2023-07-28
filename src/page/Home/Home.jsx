@@ -4,6 +4,7 @@ import {
   SubTitle,
   CarouselSection,
 } from "./components";
+import { IntroSection, NFTSection, SubTitle } from "./components";
 import { OrangeTitle, Root, Title } from "./styled";
 import handIcon from "../../assets/icon/fi-rr-hand-holding-heart.png";
 import personHeartIcon from "../../assets/icon/fi-rr-following.png";

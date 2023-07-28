@@ -1,5 +1,12 @@
-import React from "react";
-import { Child, Div1, Div2, Div3, X, DivRoot } from "./styled";
+
+import {
+  Child,
+  Div1,
+  Div2,
+  Div3,
+  X,
+  DivRoot
+}from "./styled"
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
@@ -27,10 +34,7 @@ export const Component = ({ onClose }) => {
   const getUserBalance = (accountAddress) => {
     // 잔고 가져오기
     window.ethereum
-      .request({
-        method: "eth_getBalance",
-        params: [String(accountAddress), "latest"],
-      })
+      .request({ method: "eth_getBalance", params: [String(accountAddress), "latest"] })
       .then((balance) => {
         setUserBalance(ethers.formatEther(balance));
       })
@@ -42,8 +46,12 @@ export const Component = ({ onClose }) => {
   return (
     <DivRoot>
       <Child alt="" src="/rectangle-18.svg" />
-      <Div1>지갑 주소 : {walletAddress && walletAddress.substr(0, 20)}...</Div1>
-      <Div2>잔고 : {userBalance}ETH</Div2>
+      <Div1>
+        지갑 주소 : {walletAddress && walletAddress.substr(0, 20)}...
+      </Div1>
+      <Div2>
+        잔고 : {userBalance}ETH
+      </Div2>
       <Div3>연결되었습니다!</Div3>
       <X onClick={onClose}>X</X>
     </DivRoot>

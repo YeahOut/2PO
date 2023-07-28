@@ -1,0 +1,1 @@
+export { BehindDetail } from "./BehindDetail";
