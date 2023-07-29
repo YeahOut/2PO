@@ -21,11 +21,25 @@ export const TxExplorer = styled.div`
   width: 100%;
 `;
 
+export const TitleContainer = styled.div`
+  width: 100%;
+  height: 181px;
+  flex-shrink: 0;
+  background: transparent;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 // 거래 내역 탐색기
 export const Title = styled.h2`
   font-size: 54px;
   color: #333333;
   margin-bottom: 10px;
+  font-family: "Noto Sans KR", "Inter";
+  font-weight: 700;
   margin-top: 10px;
   text-align: center;
 `;

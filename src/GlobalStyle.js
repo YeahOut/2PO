@@ -58,7 +58,25 @@ const GlobalStyle = createGlobalStyle`
   }
 .react-multi-carousel-list {
   width: 1200px;
-  height: 100%; 
+  height: 100%;
+  margin-left: 40px;
+}
+
+.ant-progress-outer {
+  height: 13px !important;
+}
+
+.ant-progress-line {
+  width: 290px;
+  height: 13px !important;
+
+  & * {
+    height: 13px !important;
+  }
+}
+
+.ant-progress-bg {
+  background-color: #ff7425 !important;
 }
 `;
 

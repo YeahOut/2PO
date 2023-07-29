@@ -12,16 +12,13 @@ const commonFontSize = css`
 
 export const TopBox = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 181px;
-  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: #f0f0f0;
-  &:hover {
-    background: rgba(108, 106, 106, 0.2);
-  }
 `;
 
 export const Typo = styled.span`
@@ -45,14 +42,14 @@ export const TypoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 181px;
   flex-shrink: 0;
 `;
 
 export const CategoryBox = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 38px;
   align-items: flex-start;
   gap: 12px;
@@ -63,7 +60,7 @@ export const CategoryBox = styled.div`
 
 export const CategoryButton = styled.button`
   display: flex;
-  padding: 10px 20px;
+  padding: 15px 30px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -77,37 +74,35 @@ export const CategoryButton = styled.button`
 
 export const ContentsBox = styled.div`
          display: flex;
-         width: 100vw;
+         width: 100%;
          min-height: 500px;
          flex-shrink: 0;
          padding-top: 70px;
          padding-bottom: 100px;
-         padding-left: 100px;
-         padding-right: 100px;
          justify-content: center;
-         flex-direction: row;
+         flex-wrap: wrap;
          gap: 50px;
        `;
 
 export const Contents = styled.div`
   display: flex;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   flex-shrink: 0;
 
 `;
 
 export const Image = styled.img`
-         width: 400px;
-         height: 400px;
+         width: 300px;
+         height: 300px;
          border-radius: 24px;
        `;
 
 export const Shadow = styled.button`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   flex-shrink: 0;
   background-color: rgba(92, 91, 91, 0.6);
   border-radius: 25px;
@@ -125,7 +120,7 @@ export const TypoWhite = styled.span`
   display: ${(props) => props.display || "block"};
   width: ${(props) => props.width || "fit-content"};
   color: #fff;
-  text-align: left;
+  text-align: centerx;
   font-family: Noto Sans KR;
   font-weight: ${(props) => props.weight || 700};
   line-height: normal;
@@ -135,7 +130,7 @@ export const TypoWhite = styled.span`
 
 export const DonateButton = styled.button`
   display: flex;
-  padding: 10px 20px;
+  padding: 8px 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -152,12 +147,12 @@ export const DonateButton = styled.button`
 export const FullBar = styled.div`
   position: relative;
   display: flex;
-  width: 350px;
+  width: 250px;
   height: 10.919px;
   flex-shrink: 0;
   border-radius: 5px;
   background: #d9d9d9;
-  margin-top: 15px;
+  margin-top: 10px;
 `;
 
 export const Bar = styled.div`
@@ -177,7 +172,7 @@ export const BottomBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 181px;
   flex-shrink: 0;
   background-color: #fff;

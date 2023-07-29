@@ -45,22 +45,34 @@ export const WaitingSection = () => {
       </TypoContainer>
 
       <CategoryBox>
-        <CategoryButton onClick={() => handleButtonClick("all")}>
+        <CategoryButton 
+        isActive={selectedButton === "all"}
+        onClick={() => handleButtonClick("all")}>
           <Typo size="14px">All</Typo>
         </CategoryButton>
-        <CategoryButton onClick={() => handleButtonClick("animal")}>
+        <CategoryButton 
+        isActive={selectedButton === "animal"}
+        onClick={() => handleButtonClick("animal")}>
           <Typo size="14px">동물</Typo>
         </CategoryButton>
-        <CategoryButton onClick={() => handleButtonClick("disaster")}>
+        <CategoryButton 
+        isActive={selectedButton === "disaster"}
+        onClick={() => handleButtonClick("disaster")}>
           <Typo size="14px">재난</Typo>
         </CategoryButton>
-        <CategoryButton onClick={() => handleButtonClick("weak")}>
+        <CategoryButton 
+        isActive={selectedButton === "weak"}
+        onClick={() => handleButtonClick("weak")}>
           <Typo size="14px">사회적 약자</Typo>
         </CategoryButton>
-        <CategoryButton onClick={() => handleButtonClick("environment")}>
+        <CategoryButton 
+        isActive={selectedButton === "environment"}
+        onClick={() => handleButtonClick("environment")}>
           <Typo size="14px">환경</Typo>
         </CategoryButton>
-        <CategoryButton onClick={() => handleButtonClick("medical")}>
+        <CategoryButton 
+        isActive={selectedButton === "medical"}
+        onClick={() => handleButtonClick("medical")}>
           <Typo size="14px">의료</Typo>
         </CategoryButton>
       </CategoryBox>
@@ -78,18 +90,18 @@ export const WaitingSection = () => {
                 <Contents key={index}>
                   <Image src={content.image} />
                   <Shadow align="column">
-                    <TypoWhite size="24px">{content.title}</TypoWhite>
+                    <TypoWhite size="17.9px">{content.title}</TypoWhite>
                     <TypoWhite size="16px">{content.organization}</TypoWhite>
                     <DonateButton>
                       <TypoWhite size="14px">투표하기</TypoWhite>
                     </DonateButton>
-                    <TypoWhite size="14px" top="150px">
+                    <TypoWhite size="14px" top="85px">
                       달성률 {content.progress}%
                     </TypoWhite>
                     <FullBar>
                       <Bar width={content.barWidth} />
                     </FullBar>
-                    <TypoWhite size="14px" top="15px">
+                    <TypoWhite size="14px" top="7px" left="1px">
                       누적 토큰수 {content.totalTokens}/{content.targetTokens}개
                     </TypoWhite>
                   </Shadow>

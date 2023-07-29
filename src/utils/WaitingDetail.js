@@ -4,6 +4,8 @@ import Waiting2 from "../assets/WaitingImage/Waiting2.jpeg";
 import Waiting3 from "../assets/WaitingImage/Waiting3.jpeg";
 import Waiting4 from "../assets/WaitingImage/Waiting4.jpeg";
 import Waiting5 from "../assets/WaitingImage/Waiting5.jpeg";
+import Waiting6 from "../assets/WaitingImage/Waiting6.jpeg";
+import Waiting7 from "../assets/WaitingImage/Waiting7.jpeg";
 
 export const WaitingImage = [
     {id: "0", name: "Waiting1", src: Waiting1},
@@ -16,11 +18,12 @@ export const contents = [
            organization: "서울시사회복지센터",
            image: Waiting0,
            progress: 83,
-           barWidth: "290px",
+           barWidth: "210px",
            totalTokens: "10,209,000",
            targetTokens: "12,300,000",
            categories: ["all", "disaster"],
            date: "2023년",
+           text: '물과 나무, 구름과 바람이 어우러진 곳에서 시작된 작은 눈송이는 자연의 미학을 담아낸다. 땅 위에 머물며 시간의 흐름을 탐구하며, 간직한 기억들을 부드러운 날개에 실어 먼 곳으로 날아간다. 아름다운 풍경과 더불어 마음 속 깊은 곳에서 소중한 추억들이 새록새록 녹아든다. 멈추지 않고 계속되는 세월의 흐름 속에서도 작은 눈송이는 우아하게 춤을 추며 시간을 읊조린다. 사람들의 마음을 따뜻하게 만드는 작은 눈송이는 모두에게 소중한 선물이다. 그 소박한 아름다움은 언제나 기억 속에 머물러 영원히 빛나고 있을 것이다.'
         
          },
          {
@@ -28,18 +31,19 @@ export const contents = [
            organization: "세이브더 칠드런",
            image: Waiting1,
            progress: 52,
-           barWidth: "182px",
+           barWidth: "140px",
            totalTokens: "6,396,000",
            targetTokens: "12,300,000",
            categories: ["all", "weak"],
            date: "2023년",
+    
          },
          {
            title: "홍수로 집을 잃은 사람들",
            organization: "강서구청",
            image: Waiting2,
            progress: 89,
-           barWidth: "311px",
+           barWidth: "220px",
            totalTokens: "10,947,000",
            targetTokens: "12,300,000",
            categories: ["all", "disaster"],
@@ -50,7 +54,7 @@ export const contents = [
            organization: "굿네이버스",
            image: Waiting3,
            progress: 42,
-           barWidth: "147px",
+           barWidth: "120px",
            totalTokens: "5,166,000",
            targetTokens: "12,300,000",
            categories: ["all", "weak"],
@@ -81,7 +85,7 @@ export const contents = [
            organization: "한국재난관리협회",
            image: Waiting4,
            progress: 35,
-           barWidth: "122px",
+           barWidth: "100px",
            totalTokens: "4,350,000",
            targetTokens: "12,300,000",
            categories: ["all", "disaster", "environment"],
@@ -96,6 +100,28 @@ export const contents = [
            totalTokens: "2,583,000",
            targetTokens: "12,300,000",
            categories: ["all", "weak", "medical"],
+           date: "2023년",
+         },
+         {
+           title: "이도윤을 위한 급식비",
+           organization: "울산제일고등학교",
+           image: Waiting6,
+           progress: 99,
+           barWidth: "245px",
+           totalTokens: "12,280,000",
+           targetTokens: "12,300,000",
+           categories: ["all", "weak"],
+           date: "2023년",
+         },
+         {
+           title: "2plusone이 물에 잠겼어요",
+           organization: "동국대학교",
+           image: Waiting7,
+           progress: 40,
+           barWidth: "110px",
+           totalTokens: "5,583,000",
+           targetTokens: "12,300,000",
+           categories: ["all", "disaster"],
            date: "2023년",
          },
          // 다른 컨텐츠들도 추가...

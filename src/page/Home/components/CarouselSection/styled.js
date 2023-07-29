@@ -7,7 +7,7 @@ export const Root = styled.main`
   align-items: center;
   width: 1200px;
   height: 600px;
-  padding: 71px 0;
+  padding: 10px 0 50px 0;
   margin: 0 auto;
   position: relative;
 `;
@@ -101,4 +101,37 @@ export const BlackBox = styled.div`
   height: 100%;
   background: rgba(9, 9, 9, 0.53);
   border-radius: 15px;
+`;
+
+export const Title = styled.h1`
+  position: absolute;
+  top: 40px;
+  left: 25px;
+  display: block;
+  width: max-content;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+export const TypoContainer = styled.div`
+  position: absolute;
+  top: 300px;
+  left: 0;
+  padding-left: 25px;
+  width: 339px;
+`;
+
+export const PercentageTypo = styled.span`
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+`;
+export const ProgressTypo = styled.span`
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 `;

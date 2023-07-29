@@ -1,35 +1,32 @@
 import React, { useRef, useState } from "react";
-import { BlackBox, Img, Root } from "./styled";
-import sampleImage from "../../../../assets/image/donate1.png";
-import rightArrow from "../../../../assets/icon/right.png";
-import leftArrow from "../../../../assets/icon/left.png";
+import {
+  BlackBox,
+  Img,
+  PercentageTypo,
+  ProgressTypo,
+  Root,
+  Title,
+  TypoContainer,
+} from "./styled";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Progress } from "antd";
 
-const images = [
-  { location: sampleImage },
-  { location: sampleImage },
-  { location: sampleImage },
-  { location: sampleImage },
-  { location: sampleImage },
-  { location: sampleImage },
-];
-
-export const CarouselSection = (props) => {
+export const CarouselSection = ({ images }) => {
   return (
     <Root>
       <Carousel
         additionalTransfrom={0}
-        arrows
+        arrows={false}
         autoPlay
-        autoPlaySpeed={1000}
+        autoPlaySpeed={3000}
         centerMode={false}
         className=""
-        containerClass="container-with-dots"
+        containerClass="container-padding-bottom"
         dotListClass=""
         draggable
-        focusOnSelect={false}
-        infinite={false}
+        focusOnSelect
+        infinite
         itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
@@ -63,18 +60,26 @@ export const CarouselSection = (props) => {
             partialVisibilityGutter: 30,
           },
         }}
-        rewind
+        rewind={false}
         rewindWithAnimation={false}
         rtl={false}
         shouldResetAutoplay
-        showDots={false}
+        showDots
         sliderClass=""
-        slidesToSlide={2}
+        slidesToSlide={1}
         swipeable
       >
         {images.map((image, index) => (
           <Img src={image.location} key={index}>
             <BlackBox />
+            <Title>{image.Title}</Title>
+            <TypoContainer>
+              <PercentageTypo>달성률 {image.per}%</PercentageTypo>
+              <ProgressTypo>
+                {image.current}/{image.goal}원
+              </ProgressTypo>
+              <Progress percent={image.per} size="small" showInfo={false} />
+            </TypoContainer>
           </Img>
         ))}
       </Carousel>

@@ -44,7 +44,7 @@ export const NavItem = styled.div`
   position: relative;
   cursor: pointer;
   &:first-of-type {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
 `;
 

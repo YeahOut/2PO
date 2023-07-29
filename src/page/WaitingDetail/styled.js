@@ -38,7 +38,7 @@ export const Typo = styled.div`
   font-size: ${(props) => props.size || "15px"};
   font-style: normal;
   ${fontWeight}
-  line-height: 129.73%
+  line-height: 129.73%;
   letter-spacing: -0.8px;
   margin-left: 90px;
   ${customMargin}
@@ -100,10 +100,11 @@ export const ButtonContainer = styled.div`
   display: flex;
   width: 760px;
   flex-direction: row;
+  justify-content: center; /* 수평 가운데 정렬 */
   align-items: center;
 gap:50px;
 margin-bottom: 32px;
-background-color: gray;
+background-color: #FFFFFF;
 `;
 
 export const VoteButton = styled.button`
