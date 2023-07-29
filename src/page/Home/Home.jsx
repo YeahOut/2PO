@@ -3,6 +3,7 @@ import {
   NFTSection,
   SubTitle,
   CarouselSection,
+  CycleSection,
 } from "./components";
 import { OrangeTitle, Root, Title } from "./styled";
 import handIcon from "../../assets/icon/fi-rr-hand-holding-heart.png";
@@ -16,6 +17,7 @@ export const Home = () => {
   return (
     <Root>
       <IntroSection />
+      <CycleSection />
       <NFTSection />
       <Title>
         당신의&nbsp;<OrangeTitle>사랑</OrangeTitle>을 나눠주세요

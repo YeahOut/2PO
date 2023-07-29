@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
 
   a, ul, li, h1, h2 {
     all: unset;
+    margin: 0;
+    padding: 0;
   }
 
   input, textarea {

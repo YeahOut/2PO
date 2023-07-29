@@ -35,7 +35,7 @@ export const CarouselSection = ({ progress, waiting, behind }) => {
         additionalTransfrom={0}
         arrows={false}
         autoPlay
-        autoPlaySpeed={3000}
+        autoPlaySpeed={5000}
         centerMode={false}
         className=""
         containerClass="container-padding-bottom"
@@ -82,7 +82,7 @@ export const CarouselSection = ({ progress, waiting, behind }) => {
         shouldResetAutoplay
         showDots
         sliderClass=""
-        slidesToSlide={1}
+        slidesToSlide={3}
         swipeable
       >
         {contentsToMap?.map((content, index) => {
