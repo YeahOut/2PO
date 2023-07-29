@@ -266,3 +266,59 @@ export const DonateOngoingImg2 = styled.div`
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   margin-top: 25px;
 `;
+
+// 사이드바
+export const SidebarContainer = styled.div`
+  position: fixed;
+  right: 0; // 오른쪽에 고정
+  width: 200px;
+  height: auto;
+
+  background-color: #f0f0f0;
+  overflow: auto;
+  border-radius: 10px;
+  margin-right: 30px;
+  padding-top: 10px;
+`;
+
+export const SidebarMenu = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+`;
+
+export const SidebarHeader = styled.h3`
+  font-size: 20px;
+  color: #333333;
+  font-family: "Noto Sans KR", "Inter";
+  font-weight: 700;
+  margin: 10px;
+`;
+
+export const SidebarMenuItem = styled.li`
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+`;
+
+export const SidebarMenuItemLink = styled.a`
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: #ff7425;
+    font-weight: bold;
+  }
+
+  &.is-current {
+    color: red;
+  }
+`;
+// styled-components를 이용해 ScrollSpySidebar에 적용할 스타일을 만듭니다.
+export const FixedSidebar = styled.div`
+  position: fixed;
+  top: 310px; // 200px은 예시입니다. 필요한 위치에 따라 변경하시면 됩니다.
+  right: 0;
+`;

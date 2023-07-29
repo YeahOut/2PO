@@ -1,8 +1,9 @@
 import React from "react";
-import { Description, NotiTitle, NotiTitleContainer, NotiBeforeDonationContainer, Title, TitleContainer, TokenContainer, NotiIcon, NotiDescription, NotiDescriptionContainer, IntroTitle, IntroContainer, IntroTitleContainer, TokenLogoTitleContainer, TokenTitle, TokenLogo, TokenTitleButton, IntroInfoDetail, ImgContianerdRow, VoteNextDonationImg1, VoteNextDonationImg2, ImgContianerdCol, DonateOngoingImg1, DonateOngoingImg2, ConnectWallet  } from "./styled.js";
+import { Description, NotiTitle, NotiTitleContainer, NotiBeforeDonationContainer, Title, TitleContainer, TokenContainer, NotiIcon, NotiDescription, NotiDescriptionContainer, IntroTitle, IntroContainer, IntroTitleContainer, TokenLogoTitleContainer, TokenTitle, TokenLogo, TokenTitleButton, IntroInfoDetail, ImgContianerdRow, VoteNextDonationImg1, VoteNextDonationImg2, ImgContianerdCol, DonateOngoingImg1, DonateOngoingImg2, ConnectWallet, FixedSidebar  } from "./styled.js";
+import ScrollSpySidebar from '../ScrollSpySidebar'
 //import notiBeforeDonationIconSrc from "../../../../assets/icon/noti-before-donation.png";
 
-  
+const sectionIds = ['1.지갑 연동', '2. 토큰 투표', '3. 기부 프로젝트 선택'];  // 각 섹션에 해당하는 id들입니다.
 export const TokenInfo = () => {
     return (
         <TokenContainer>
@@ -14,6 +15,12 @@ export const TokenInfo = () => {
                     당신의 작은 기부가 우리 모두의 큰 변화를 만들 수 있습니다. 지금 바로 토큰으로 희망을 전하세요!
                 </Description>
             </TitleContainer>
+        <FixedSidebar>
+
+            <ScrollSpySidebar items={sectionIds} />
+            
+        </FixedSidebar>
+
         <NotiBeforeDonationContainer>
             <NotiTitleContainer>
                 <NotiIcon/>
@@ -35,7 +42,7 @@ export const TokenInfo = () => {
         </NotiBeforeDonationContainer>
         <IntroContainer>
             <IntroTitleContainer>
-                <IntroTitle>
+                <IntroTitle id={sectionIds[0]}>
                     2PO 토큰 소개
                 </IntroTitle>
 
@@ -51,7 +58,7 @@ export const TokenInfo = () => {
                 2PO 토큰은 본 기부 플랫폼에서 사용되는 암호화폐로, 기부 프로젝트에 대한 투표나 직접적인 기부에 사용됩니다. 
 이 토큰을 통해 사용자는 다양한 기부 프로젝트에 참여하고, 세상을 바꾸는 데 일조할 수 있습니다.
             </IntroInfoDetail>
-            <IntroTitle>
+            <IntroTitle id={sectionIds[1]}>
                 1. 암호화폐 지갑을 연동하세요. 우측 상단의 ‘지갑 연동’ 버튼 클릭.
             </IntroTitle>
             <ConnectWallet/>
@@ -68,7 +75,7 @@ export const TokenInfo = () => {
                 <VoteNextDonationImg2/>
 
             </ImgContianerdRow>
-            <IntroTitle>
+            <IntroTitle id={sectionIds[2]}>
                 3. 기부 프로젝트 선택
             </IntroTitle>
             <IntroInfoDetail>
