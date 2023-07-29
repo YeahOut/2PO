@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
 
   a, ul, li, h1, h2 {
     all: unset;
+    margin: 0;
+    padding: 0;
   }
 
   input, textarea {
@@ -50,11 +52,37 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     cursor: pointer;
     font-family: "Noto Sans KR", "Inter", "sans-serif";
+    background: transparent;
     /* font-weight: 500; */
     &:focus {
       outline: none;
     }
   }
+.react-multi-carousel-list {
+  width: 1200px;
+  height: 100%;
+}
+
+.react-multi-carousel-track {
+  margin-left: 30px;
+}
+
+.ant-progress-outer {
+  height: 13px !important;
+}
+
+.ant-progress-line {
+  width: 290px;
+  height: 13px !important;
+
+  & * {
+    height: 13px !important;
+  }
+}
+
+.ant-progress-bg {
+  background-color: #ff7425 !important;
+}
 `;
 
 export default GlobalStyle;

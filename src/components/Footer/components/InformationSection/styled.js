@@ -119,6 +119,7 @@ export const MailInput = styled.input`
   background: #fff;
   padding-left: 22px;
   padding-right: 165px;
+  font-size: 12px;
 `;
 
 export const Button = styled.button`
@@ -132,6 +133,7 @@ export const Button = styled.button`
   height: 46px;
   border-radius: 45px;
   color: #fff;
+  font-size: 12px;
   background: #2639ed;
   transition: 0.3s; /* Add transition to smooth the effect */
   &:hover {

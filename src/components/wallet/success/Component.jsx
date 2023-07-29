@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Child,
   Div1,
@@ -57,5 +57,3 @@ export const Component = ({ onClose }) => {
     </DivRoot>
   );
 };
-
-

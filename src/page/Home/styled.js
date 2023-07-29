@@ -14,7 +14,7 @@ export const Title = styled.h1`
   color: #000;
   font-size: 50px;
   font-weight: 700;
-  margin: 30px 0;
+  margin: 50px 0;
 `;
 
 export const OrangeTitle = styled.span`

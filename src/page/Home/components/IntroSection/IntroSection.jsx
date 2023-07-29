@@ -12,8 +12,11 @@ import {
 import heartIcon from "../../../../assets/icon/heart.svg";
 import messageIcon from "../../../../assets/icon/message.svg";
 import smileIcon from "../../../../assets/icon/smile.svg";
+import { useNavigate } from "react-router";
 
 export const IntroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <IntroRoot>
       <Container>
@@ -29,7 +32,9 @@ export const IntroSection = () => {
           <Typo left="10px" size="25px" weight="500">
             안전하게 기부런이 지켜드리겠습니다.
           </Typo>
-          <Button top="45px">기부하러 가기</Button>
+          <Button top="45px" onClick={() => navigate("/progress")}>
+            기부하러 가기
+          </Button>
         </TypoContainer>
       </Container>
       <Container top="-30px" bottom="50px">
