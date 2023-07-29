@@ -24,3 +24,5 @@
   `npm i react-responsive-carousel`
 - semantic-ui-react(css 도우미) 사용을 위한 명령어
   `npm install semantic-ui-react semantic-ui-css`
+- 토큰사용법 페이지 사이드 바 구현 명령어
+  `npm install react-scrollspy --save`
