@@ -22,13 +22,13 @@ export const TextContainer = styled.div`
 
 export const SubTitle = styled.div`
   display: block;
-  color: #ff2d22;
+  color: #000;
   font-size: 23px;
   font-weight: 700;
   line-height: 120%; /* 27.6px */
   letter-spacing: 4.6px;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin-left: 17px;
+  margin-bottom: 10px;
 `;
 
 export const Title = styled.div`
