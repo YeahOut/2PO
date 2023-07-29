@@ -48,7 +48,7 @@ export const contents = [
     image: Progress2,
     progress: 75,
     barWidth: "180px",
-    totalDonation: "3,49,000",
+    totalDonation: "349,000",
     targetDonation: "2,000,000",
     categories: ["all", "weak"],
     date: "2023년",

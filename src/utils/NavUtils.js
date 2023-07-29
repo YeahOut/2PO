@@ -31,7 +31,7 @@ const navItems = [
     text: "고객센터",
     details: [
       { name: "FAQ", src: "faq" },
-      { name: "문의 사항", src: "inquiry" },
+      { name: "문의사항", src: "inquiry" },
     ],
   },
 ];

@@ -31,40 +31,46 @@ export const ProgressSection = () => {
 
   return (
     <div>
-      <TopBox>
+      {/*       <TopBox>
         <Typo size="48px">기부하기</Typo>
         <Typo size="20px">서울시에 당신의 따뜻한 마음을 기부해주세요.</Typo>
-      </TopBox>
+      </TopBox> */}
 
       <CategoryBox>
-        <CategoryButton 
-        isActive={selectedButton === "all"}
-        onClick={() => handleButtonClick("all")}>
+        <CategoryButton
+          isActive={selectedButton === "all"}
+          onClick={() => handleButtonClick("all")}
+        >
           <Typo size="14px">All</Typo>
         </CategoryButton>
-        <CategoryButton 
-        isActive={selectedButton === "animal"}
-        onClick={() => handleButtonClick("animal")}>
+        <CategoryButton
+          isActive={selectedButton === "animal"}
+          onClick={() => handleButtonClick("animal")}
+        >
           <Typo size="14px">동물</Typo>
         </CategoryButton>
-        <CategoryButton 
-        isActive={selectedButton === "disaster"}
-        onClick={() => handleButtonClick("disaster")}>
+        <CategoryButton
+          isActive={selectedButton === "disaster"}
+          onClick={() => handleButtonClick("disaster")}
+        >
           <Typo size="14px">재난</Typo>
         </CategoryButton>
-        <CategoryButton 
-        isActive={selectedButton === "weak"}
-        onClick={() => handleButtonClick("weak")}>
+        <CategoryButton
+          isActive={selectedButton === "weak"}
+          onClick={() => handleButtonClick("weak")}
+        >
           <Typo size="14px">사회적 약자</Typo>
         </CategoryButton>
-        <CategoryButton 
-        isActive={selectedButton === "environment"}
-        onClick={() => handleButtonClick("environment")}>
+        <CategoryButton
+          isActive={selectedButton === "environment"}
+          onClick={() => handleButtonClick("environment")}
+        >
           <Typo size="14px">환경</Typo>
         </CategoryButton>
-        <CategoryButton 
-        isActive={selectedButton === "medical"}
-        onClick={() => handleButtonClick("medical")}>
+        <CategoryButton
+          isActive={selectedButton === "medical"}
+          onClick={() => handleButtonClick("medical")}
+        >
           <Typo size="14px">의료</Typo>
         </CategoryButton>
       </CategoryBox>
