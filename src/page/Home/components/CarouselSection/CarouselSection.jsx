@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import {
   BlackBox,
   Img,
@@ -11,8 +11,24 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Progress } from "antd";
+import { useNavigate } from "react-router";
 
-export const CarouselSection = ({ images }) => {
+export const CarouselSection = ({ progress, waiting, behind }) => {
+  const contentsToMap = progress || waiting || behind;
+
+  const navigate = useNavigate();
+
+  const onClickNavigate = (content, index) => {
+    if (contentsToMap == behind) {
+      navigate(`/behind/${content.id}`);
+    }
+    if (contentsToMap == progress) {
+      navigate(`/progress/${index}`);
+    }
+    if (contentsToMap == waiting) {
+      navigate(`/waiting/${index}`);
+    }
+  };
   return (
     <Root>
       <Carousel
@@ -69,19 +85,41 @@ export const CarouselSection = ({ images }) => {
         slidesToSlide={1}
         swipeable
       >
-        {images.map((image, index) => (
-          <Img src={image.location} key={index}>
-            <BlackBox />
-            <Title>{image.Title}</Title>
-            <TypoContainer>
-              <PercentageTypo>달성률 {image.per}%</PercentageTypo>
-              <ProgressTypo>
-                {image.current}/{image.goal}원
-              </ProgressTypo>
-              <Progress percent={image.per} size="small" showInfo={false} />
-            </TypoContainer>
-          </Img>
-        ))}
+        {contentsToMap?.map((content, index) => {
+          /* const percentage = Math.floor(
+            (content.totalDonation / content.targetDonation) * 100
+          );
+          const localeString = (number) => {
+            return number.toLocaleString("ko-KR");
+          }; */
+          return (
+            <Img
+              src={
+                contentsToMap !== behind ? content.image : content.images[0].src
+              }
+              key={index}
+              onClick={() => onClickNavigate(content, index)}
+            >
+              <BlackBox>
+                <Title>{content.title}</Title>
+                {contentsToMap !== behind && (
+                  <TypoContainer>
+                    <PercentageTypo>달성률 {content.progress}%</PercentageTypo>
+                    <ProgressTypo>
+                      {content.total}/{content.target}
+                      {contentsToMap === progress ? "원" : "토큰"}
+                    </ProgressTypo>
+                    <Progress
+                      percent={content.progress}
+                      size="small"
+                      showInfo={false}
+                    />
+                  </TypoContainer>
+                )}
+              </BlackBox>
+            </Img>
+          );
+        })}
       </Carousel>
     </Root>
   );

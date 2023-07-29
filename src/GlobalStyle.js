@@ -59,7 +59,10 @@ const GlobalStyle = createGlobalStyle`
 .react-multi-carousel-list {
   width: 1200px;
   height: 100%;
-  margin-left: 40px;
+}
+
+.react-multi-carousel-track {
+  margin-left: 30px;
 }
 
 .ant-progress-outer {

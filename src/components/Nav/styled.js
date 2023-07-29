@@ -50,7 +50,7 @@ export const NavItem = styled.div`
 
 export const Tooltip = styled.div`
   position: absolute;
-  top: 125%;
+  top: 140%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -65,7 +65,6 @@ export const Tooltip = styled.div`
   border: 2px solid #ff7425;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 17px;
   font-weight: 700;
   color: #000;
@@ -82,9 +81,15 @@ export const Tooltip = styled.div`
 export const NavItemText = styled.div`
   width: fit-content;
   margin: 5px 10px;
+  font-family: "Noto Sans KR", sans-serif;
   color: #666;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: 700;
   &:hover {
     color: #ff7425;
+    cursor: pointer;
   }
 `;
 
