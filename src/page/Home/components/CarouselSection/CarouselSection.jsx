@@ -106,8 +106,9 @@ export const CarouselSection = ({ progress, waiting, behind }) => {
                   <TypoContainer>
                     <PercentageTypo>달성률 {content.progress}%</PercentageTypo>
                     <ProgressTypo>
-                      {content.total}/{content.target}
-                      {contentsToMap === progress ? "원" : "토큰"}
+                      {contentsToMap === progress
+                        ? `${content.totalDonation}/${content.targetDonation}원`
+                        : `${content.totalTokens}/${content.targetTokens}토큰`}
                     </ProgressTypo>
                     <Progress
                       percent={content.progress}
