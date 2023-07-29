@@ -4,7 +4,7 @@ import TokenIcon from "../../../../assets/icon/2po-toekn-logo.png";
 import tokenButton from "../../../../assets/icon/tokenbutton.png";
 import connectWalletBtn from "../../../../assets/icon/connect-wallet-button.png";
 import voteDonation from "../../../../assets/image/vote-next-donation.png";
-import voteDonationDetail from "../../../../assets/image/vote-next-donation.png";
+import voteDonationDetail from "../../../../assets/image/vote-next-donation-detail.png";
 import donateOngoing from "../../../../assets/image/donate-ongoing.png";
 import donateOngoingDetail from "../../../../assets/image/donate-ongoing-detail.png";
 
