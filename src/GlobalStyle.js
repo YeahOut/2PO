@@ -83,6 +83,56 @@ const GlobalStyle = createGlobalStyle`
 .ant-progress-bg {
   background-color: #ff7425 !important;
 }
+
+.quill {
+    width: 100%;
+    height: 480px;
+    margin: 15px 0 50px 0;
+
+    .ql-toolbar {
+      font-family: "Noto Sans KR", "Inter", "sans-serif" !important;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    /* .ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+      color: #7c3aed !important;
+    } */
+    .ql-container {
+      padding-top: 4px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .ql-snow {
+      border: 1px solid #e2e8f0 !important;
+    }
+    .ql-editor {
+      font-family: "Noto Sans KR", "Inter", "sans-serif";
+      font-size: 16px;
+      /* font-weight: 500; */
+      color: #0f172a;
+      
+      /* 스크롤바 기본 꾸미기 */
+      &::-webkit-scrollbar {
+        width: 12px; /* 세로축 스크롤바 폭 너비 */
+      }
+
+      /* 스크롤바 막대 꾸미기 */
+      &::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 10px;
+      }
+
+      /* 스크롤바 트랙 꾸미기 */
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+    .ql-editor.ql-blank::before{
+      color: #94a3b8;
+      font-style: normal;
+      font-weight: 400;
+    } 
+  }
 `;
 
 export default GlobalStyle;
