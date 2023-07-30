@@ -1,7 +1,7 @@
 const ImageData = [
   {
     id: "p1",
-    title: "할머니가 코로나에 걸리셨어요.",
+    title: "홍수 피해 복구",
     images: [
       { src: "/Giver1.jpg", alt: "image1" },
       { src: "/Giver1-1.jpg", alt: "image2" },
