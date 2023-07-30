@@ -60,7 +60,6 @@ export const GridContainer = styled.div`
   grid-template-columns: 900px 1fr;
   background-color: #fff;
   flex-direction: column;
-
   
     `;
 
@@ -104,12 +103,13 @@ export const VoteContainer = styled.div`
   padding-bottom: 0px;
   align-items:left;
   padding: 10px;
-
   border-radius: 12px;
   flex-direction: column;
   background: #fff;  
   margin-left: 50px;
   box-shadow: 0px 5px 16px -3px rgba(0, 0, 0, 0.2);
+  position: sticky;
+
 `;
 
 
@@ -131,9 +131,8 @@ export const ButtonContainer = styled.div`
   gap:0px;
   margin-top:50px;
   margin-bottom:10px;
-  background-color: transparent;
   justify-content: space-between;
-  width: 50%;
+  width: 48%;
 `;
 
 export const ButtonContainer2 = styled.div`
@@ -155,8 +154,12 @@ export const VoteCoinButton = styled.button`
         align-items: center;
         flex-shrink: 0;
         border-radius: 12px;
-        background: linear-gradient(180deg, #F9DB74 0%, #F3BC51 100%);
         padding: '10px 20px'
+        background: #FFB524;
+        background: linear-gradient(180deg, #F9DB74 0%, #F3BC51 100%);
+        &:hover {
+          background: #d55711;
+        }
         ${customMargin};
        `;
 
@@ -168,8 +171,12 @@ export const VoteAcoountButton = styled.button`
          align-items: center;
          flex-shrink: 0;
          border-radius: 12px;
-         background: linear-gradient(180deg, #FDB933 0%, #F99A32 100%);
          padding: '10px 20px'
+         background: #FFB524;
+         background: linear-gradient(180deg, #FDB933 0%, #F99A32 100%);
+         &:hover {
+          background: #d55711;
+        }
          ${customMargin};
        `;
 

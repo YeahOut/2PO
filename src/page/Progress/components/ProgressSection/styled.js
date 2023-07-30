@@ -81,29 +81,30 @@ export const ContentsBox = styled.div`
          padding-top: 70px;
          padding-bottom: 100px;
          justify-content: center;
+         align-items: center;
          flex-wrap: wrap;
          gap: 50px;
        `;
 
 export const Contents = styled.div`
   display: flex;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   flex-shrink: 0;
 
 `;
 
 export const Image = styled.img`
-         width: 300px;
-         height: 300px;
+width: 400px;
+height: 400px;
          border-radius: 24px;
        `;
 
 export const Shadow = styled.button`
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   flex-shrink: 0;
   background-color: rgba(92, 91, 91, 0.6);
   border-radius: 25px;
@@ -141,14 +142,16 @@ export const DonateButton = styled.button`
   &:hover {
     background: #d55711;
   }
-  margin-top: 25px;
+  margin-top: 35px;  
+  margin-bottom: 40px;
+
   justify-content: ${(props) => props.justify || "flex-start"};
 `;
 
 export const FullBar = styled.div`
   position: relative;
   display: flex;
-  width: 250px;
+  width: 350px;
   height: 10.919px;
   flex-shrink: 0;
   border-radius: 5px;
