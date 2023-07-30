@@ -6,8 +6,8 @@ export const Waiting = () => {
   return (
     <Root>
       <Title
-        title="기부하기"
-        subtitle="서울시에 당신의 따뜻한 마음을 기부해주세요."
+        title="투표하기"
+        subtitle="기부하고 싶은 대기명단에 투표를 해서 다음 기부대상자로 선정되게해주세요!"
       />
       <WaitingSection />
     </Root>

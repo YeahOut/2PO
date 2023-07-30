@@ -60,11 +60,10 @@ export const CategoryBox = styled.div`
 
 export const CategoryButton = styled.button`
   display: flex;
-  padding: 20px 40px;
+  padding: 13px 26px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 100px;
   background: rgba(220, 220, 220, 0.2);
   &:hover {

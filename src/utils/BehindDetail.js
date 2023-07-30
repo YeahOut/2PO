@@ -37,7 +37,7 @@ const ImageData = [
       { id: "G9", name: "인덱스9", src: child7 },
       { id: "G10", name: "인덱스10", src: grand3 },
       { id: "G11", name: "인덱스11", src: grand1 },
-      { id: "G12", name: "인데스12", src: animal12 },
+      { id: "G12", name: "인덱스12", src: animal12 },
     ],
   },
   {

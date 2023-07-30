@@ -37,7 +37,7 @@ export const WaitingSection = () => {
 
       <TypoContainer>
         <Typo size="48px">
-          다음 기부 목록에 <TypoOrange size="48px">투표</TypoOrange>
+          다음 대기명단에 <TypoOrange size="48px">투표</TypoOrange>
           하세요
         </Typo>
       </TypoContainer>
@@ -47,37 +47,37 @@ export const WaitingSection = () => {
           isActive={selectedButton === "all"}
           onClick={() => handleButtonClick("all")}
         >
-          <Typo size="14px">All</Typo>
+          <Typo size="18px">All</Typo>
         </CategoryButton>
         <CategoryButton
           isActive={selectedButton === "animal"}
           onClick={() => handleButtonClick("animal")}
         >
-          <Typo size="14px">동물</Typo>
+          <Typo size="18px">동물</Typo>
         </CategoryButton>
         <CategoryButton
           isActive={selectedButton === "disaster"}
           onClick={() => handleButtonClick("disaster")}
         >
-          <Typo size="14px">재난</Typo>
+          <Typo size="18px">재난</Typo>
         </CategoryButton>
         <CategoryButton
           isActive={selectedButton === "weak"}
           onClick={() => handleButtonClick("weak")}
         >
-          <Typo size="14px">사회적 약자</Typo>
+          <Typo size="18px">사회적 약자</Typo>
         </CategoryButton>
         <CategoryButton
           isActive={selectedButton === "environment"}
           onClick={() => handleButtonClick("environment")}
         >
-          <Typo size="14px">환경</Typo>
+          <Typo size="18px">환경</Typo>
         </CategoryButton>
         <CategoryButton
           isActive={selectedButton === "medical"}
           onClick={() => handleButtonClick("medical")}
         >
-          <Typo size="14px">의료</Typo>
+          <Typo size="18px">의료</Typo>
         </CategoryButton>
       </CategoryBox>
 
