@@ -91,7 +91,6 @@ export const Contents = styled.div`
   width: 400px;
   height: 400px;
   flex-shrink: 0;
-
 `;
 
 export const Image = styled.img`

@@ -24,18 +24,51 @@ export const ImageGroup = styled.div`
   }
 `;
 
-export const WhiteGroundImage = styled.img`
+
+export const WhiteGroundImage = styled.div`
+ position: relative;
   width: 300px;
   height: 300px;
-  object-fit: cover;
   border-radius: 13%;
   margin: 50px;
-  border: 3px solid #000000;
-  position: relative;
   cursor: pointer;
 
-  &:hover {
-    opacity: 0.5;
+  /* Styles for the image itself */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #000000;
+    filter: brightness(60%);
+      &:hover {
+   filter: brightness(100%);
+  }
+  }
+
+  /* Styles for the text on top of the image */
+  .image-text {
+    position: absolute;
+    top: 37%;
+    left: 9%;
+    color: #FFFFFF;
+    font-family: Noto Sans KR;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 1;
+  }
+
+  .image-text2 {
+    position: absolute;
+    top: 55%;
+    left: 18%;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 1;
   }
 `;
 
@@ -61,3 +94,4 @@ export const Button = styled.button`
     color: #ffffff;
   }
 `;
+

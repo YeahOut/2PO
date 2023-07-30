@@ -32,9 +32,14 @@ export const BottomBack = () => {
               {data.details.map((item, index) => (
                 <div key={item.id} onClick={() => handleImageClick(data.group)}>
                   <Link to={item.id}>
-                    <WhiteGroundImage src={item.src} />
+                    <WhiteGroundImage>
+                      <img src={item.src} alt={item.alt} />
+                      <div className="image-text">{item.title}</div>
+                      <div className="image-text2">{item.money}</div>
+                    </WhiteGroundImage>
                   </Link>
                 </div>
+        
               ))}
             </ImageGroup>
           )
