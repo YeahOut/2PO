@@ -60,7 +60,7 @@ export const CategoryBox = styled.div`
 
 export const CategoryButton = styled.button`
   display: flex;
-  padding: 15px 30px;
+  padding: 20px 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

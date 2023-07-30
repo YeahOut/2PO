@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { contents } from "../../../../utils/WaitingDetail";
 import {
-  TopBox,
   Typo,
   TypoOrange,
   TypoContainer,
