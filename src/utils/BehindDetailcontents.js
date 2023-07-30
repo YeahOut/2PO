@@ -1,36 +1,33 @@
 const ImageData = [
   {
-    id: "p1",
-    title: "홍수 피해 복구",
+    id: "G1",
+    title: "호우 피해 주민",
     images: [
       { src: "/Giver1.jpg", alt: "image1" },
       { src: "/Giver1-1.jpg", alt: "image2" },
       { src: "/Giver1-2.jpg", alt: "image3" },
-      { src: "/Giver1-3.jpg", alt: "image4" },
     ],
   },
   {
-    id: "p2",
+    id: "G2",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver2.jpg", alt: "image5" },
-      { src: "/Giver2-1.jpeg", alt: "image6" },
-      { src: "/Giver2-2.png", alt: "image7" },
-      { src: "/Giver2-3.jpeg", alt: "image8" },
+      { src: "/Giver2-1.jpg", alt: "image6" },
+      { src: "/Giver2-2.jpeg", alt: "image7" },
     ],
   },
   {
-    id: "p3",
+    id: "G3",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver3.jpg", alt: "image9" },
-      { src: "/Giver3-1.webp", alt: "image10" },
-      { src: "/Giver3-2.png", alt: "image11" },
-      { src: "/Giver3-3.jpg", alt: "image12" },
+      { src: "/Giver3-1.png", alt: "image10" },
+      { src: "/Giver3-2.jpg", alt: "image11" },
     ],
   },
   {
-    id: "p4",
+    id: "G4",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver4.jpg", alt: "image13" },
@@ -39,7 +36,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p5",
+    id: "G5",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver5.jpg", alt: "image17" },
@@ -49,7 +46,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p6",
+    id: "G6",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver6.jpg", alt: "image21" },

@@ -4,8 +4,6 @@ import Progress2 from "../assets/ProgressImage/Progress2.jpg";
 import Progress3 from "../assets/ProgressImage/Progress3.jpg";
 import Progress4 from "../assets/ProgressImage/Progress4.jpg";
 import Progress5 from "../assets/ProgressImage/Progress5.jpg";
-import Progress6 from "../assets/ProgressImage/Progress6.jpg";
-import Progress7 from "../assets/ProgressImage/Progress7.jpg";
 
 export const ProgressImage = [{ id: "0", name: "Progress0", src: Progress0 }];
 export const contents = [

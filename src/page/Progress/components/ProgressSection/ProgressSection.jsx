@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { contents } from "../../../../utils/ProgressDetail";
 import {
-  TopBox,
   Typo,
-  TypoOrange,
-  TypoContainer,
   CategoryBox,
   CategoryButton,
   ContentsBox,

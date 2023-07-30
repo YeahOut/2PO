@@ -1,4 +1,4 @@
-import React ,{ useEffect, useState }from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { contents } from "../../utils/ProgressDetail";
 import {
