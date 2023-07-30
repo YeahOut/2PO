@@ -2,7 +2,14 @@ import { useState, useRef, useMemo } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Title } from "../../components";
-import { Button, Form, Root } from "./styled";
+import {
+  Button,
+  QuestionForm,
+  QuestionTitleInput,
+  QuestionTitleSection,
+  QuestionTypo,
+  Root,
+} from "./styled";
 import { useCallback } from "react";
 
 export const Inquiry = () => {
@@ -41,7 +48,11 @@ export const Inquiry = () => {
         title="문의사항"
         subtitle="궁금한 사항을 남겨주시면 24시간 내로 답변해드립니다."
       />
-      <Form>
+      <QuestionForm>
+        <QuestionTitleSection>
+          <QuestionTypo>Q</QuestionTypo>
+          <QuestionTitleInput placeholder="제목을 입력해주세요." />
+        </QuestionTitleSection>
         <ReactQuill
           ref={(element) => {
             if (element !== null) {
@@ -55,7 +66,7 @@ export const Inquiry = () => {
           placeholder="내용을 입력해주세요."
         />
         <Button onClick={postQuestion}>문의등록</Button>
-      </Form>
+      </QuestionForm>
     </Root>
   );
 };

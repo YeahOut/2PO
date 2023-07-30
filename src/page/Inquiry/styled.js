@@ -9,7 +9,40 @@ export const Root = styled.div`
   height: 900px;
 `;
 
-export const Form = styled.form`
+export const QuestionTitleSection = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+`;
+
+export const QuestionTypo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #ff7425;
+  border-radius: 50%;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+`;
+
+export const QuestionTitleInput = styled.input`
+  width: 617px;
+  height: 50px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  background: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 20px;
+  margin-left: 15px;
+`;
+
+export const QuestionForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 800px;
