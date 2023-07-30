@@ -35,7 +35,6 @@ const ImageData = [
     images: [
       { src: "/Giver4.jpg", alt: "image13" },
       { src: "/Giver4-1.jpg", alt: "image14" },
-      { src: "/Giver4-2.jpg", alt: "image15" },
       { src: "/Giver4-3.png", alt: "image16" },
     ],
   },
