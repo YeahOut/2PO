@@ -1,6 +1,6 @@
 const ImageData = [
   {
-    id: "p1",
+    id: "G1",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver1.jpg", alt: "image1" },
@@ -10,7 +10,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p2",
+    id: "G2",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver2.jpg", alt: "image5" },
@@ -20,7 +20,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p3",
+    id: "G3",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver3.jpg", alt: "image9" },
@@ -30,7 +30,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p4",
+    id: "G4",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver4.jpg", alt: "image13" },
@@ -39,7 +39,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p5",
+    id: "G5",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver5.jpg", alt: "image17" },
@@ -49,7 +49,7 @@ const ImageData = [
     ],
   },
   {
-    id: "p6",
+    id: "G6",
     title: "할머니가 코로나에 걸리셨어요.",
     images: [
       { src: "/Giver6.jpg", alt: "image21" },
