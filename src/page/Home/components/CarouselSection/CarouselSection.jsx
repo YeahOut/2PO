@@ -12,13 +12,14 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Progress } from "antd";
 import { useNavigate } from "react-router";
+import { useCallback } from "react";
 
 export const CarouselSection = ({ progress, waiting, behind }) => {
   const contentsToMap = progress || waiting || behind;
 
   const navigate = useNavigate();
 
-  const onClickNavigate = (content, index) => {
+  const onClickNavigate = useCallback((content, index) => {
     if (contentsToMap == behind) {
       navigate(`/behind/${content.id}`);
     }
@@ -28,7 +29,8 @@ export const CarouselSection = ({ progress, waiting, behind }) => {
     if (contentsToMap == waiting) {
       navigate(`/waiting/${index}`);
     }
-  };
+  }, []);
+
   return (
     <Root>
       <Carousel
