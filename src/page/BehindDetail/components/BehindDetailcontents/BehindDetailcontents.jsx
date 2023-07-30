@@ -13,7 +13,7 @@ export const BehindDetailcontents = ({id}) => {
     return null; 
   }
 
-  const { images } = filteredImageData;
+  const { images, title, textBox } = filteredImageData;
 
   function handleChange(index) {
     setCurrentIndex(index);
@@ -27,7 +27,7 @@ export const BehindDetailcontents = ({id}) => {
 
   return (
     <BigBox>
-      <Title/>
+      <Title>{title}</Title>
       <ImageBox>
         <Carousel
           showArrows={true} // 기본 화살표 숨김
@@ -43,7 +43,7 @@ export const BehindDetailcontents = ({id}) => {
       </ImageBox>
       <TextGroup>
         <Line/>
-        <TextBox/>
+        <TextBox>{textBox}</TextBox>
         <Blank/>
         <More/>
       </TextGroup>

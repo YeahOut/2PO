@@ -21,9 +21,9 @@ const ImageData = [
   {
     group: "group1",
     details: [
-      { id: "G1", name: "인덱스1", src: build13, title: "사무실이 홍수에 잠겼어요", money:"총 후원 금액 : 1000만원"},
+      { id: "G1", name: "인덱스1", src: build13, title: "스타트업 사무실이 홍수..", money:"총 후원 금액 : 1000만원"},
       { id: "G2", name: "인덱스2", src: grand2, title: "부모님이 교통사고를 당..", money:"총 후원 금액 : 500만원"},
-      { id: "G3", name: "인덱스3", src: animal11, title: "안락사로부터 유기견들..", money:"총 후원 금액 : 1000만원"},
+      { id: "G3", name: "인덱스3", src: animal11, title: "유기견들을 보호해주세요", money:"총 후원 금액 : 1000만원"},
       { id: "G4", name: "인덱스4", src: child8, title: "가장이 되어버린 초등학..", money:"총 후원 금액 : 1500만원" },
       { id: "G5", name: "인덱스5", src: child9, title: "결손가정의 아이들이 홀..", money:"총 후원 금액 : 2000만원" },
       { id: "G6", name: "인덱스6", src: hosp15, title: "할머니께서 코로나에 걸..", money:"총 후원 금액 : 700만원" },

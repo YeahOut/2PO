@@ -38,10 +38,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 24px;
 
-&::before {
-    content: "gggggg";
-    display: block; 
-  }
 `;
 
 export const More = styled.div`
@@ -61,7 +57,7 @@ text-decoration-line: underline;
 `;
 
 export const Title = styled.div`
-width: 551px;
+width: 700px;
 height: 58px;
 margin-top: 50px;
 flex-shrink: 0;
@@ -73,10 +69,6 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 
-&::before {
-    content: "할머니가 코로나에 걸리셨어요";
-    display: block; 
-  }
 `;
 
 export const Line = styled.div`
@@ -102,20 +94,4 @@ export const Image = styled.img`
 width: 618px;
 height: 400px;
 border-radius: 10px;
-`;
-
-
-export const RightMovingBox = styled.div`
-  position: absolute;
-  top: 0;
-  right: 20px; /* Adjust the right value as needed to control the horizontal position */
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  transition: top 0.3s ease; /* Add smooth transition effect */
-
-  /* Add any additional styles as needed */
-  /* For example, if you want to style the content inside the box, you can do it here */
 `;
