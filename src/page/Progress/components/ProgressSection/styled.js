@@ -56,12 +56,11 @@ export const CategoryBox = styled.div`
   flex-shrink: 0;
   padding-left: 80px;
   padding-right: 80px;
-  padding-top: 30px;
 `;
 
 export const CategoryButton = styled.button`
   display: flex;
-  padding: 15px 30px;
+  padding: 13px 26px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -141,8 +140,8 @@ export const DonateButton = styled.button`
   &:hover {
     background: #d55711;
   }
-  margin-top: 35px;  
-  margin-bottom: 40px;
+  margin-top: 25px;  
+  margin-bottom: 60px;
 
   justify-content: ${(props) => props.justify || "flex-start"};
 `;

@@ -82,7 +82,7 @@ export const WaitingDetail = () => {
             {selectedContent.title}
           </Typo>
           <Typo size="15px" left="100px" top="20px">
-            후원 기간 : 후원 대상 선정으로부터 1달 •{" "}
+            후원 기간 : 후원 대상 선정으로부터 1달 &nbsp;&nbsp;•&nbsp;&nbsp;
             <img src="/tag.svg" alt="테그" />
             {selectedContent.organization}
           </Typo>
@@ -99,12 +99,12 @@ export const WaitingDetail = () => {
               </Typo>
               <ButtonContainer>
                 <OrangeButton top="32px">
-                  <Typo size="15px" fontWeight="700" color="#fff">
+                  <Typo size="15px" fontWeight="700" color="#fff" top="5px">
                     토큰으로 투표하기
                   </Typo>
                 </OrangeButton>
                 <ShareButton top="32px">
-                  <Typo size="15px" fontWeight="700" color="#000">
+                  <Typo size="15px" fontWeight="700" color="#000" top="5px">
                     공유하기
                   </Typo>
                 </ShareButton>
@@ -126,7 +126,7 @@ export const WaitingDetail = () => {
                 </Box>
               </Box>
               <Button top="35px" width="120px" height="40px">
-                <Typo color="#333" size="15px" fontWeight="700">
+                <Typo color="#333" size="15px" fontWeight="700" top="7px">
                   연락하기
                 </Typo>
               </Button>
@@ -146,8 +146,9 @@ export const WaitingDetail = () => {
                     background="#fff"
                     left="25px"
                     alignItem="center"
+                    top="3px"
                   >
-                    <Typo size="14px" fontWeight="300" top="5px" left="5px">
+                    <Typo size="14px" fontWeight="300" top="2px" left="5px">
                       <input
                         type="text"
                         value={commentValue} // 댓글 입력 값
@@ -160,8 +161,9 @@ export const WaitingDetail = () => {
                     width="66px"
                     height="29px"
                     onClick={handleCommentSubmit}
+                    top="3px"
                   >
-                    <Typo size="11px" color="#fff" fontWeight="600">
+                    <Typo size="13px" color="#fff" fontWeight="700" top="3px">
                       등록
                     </Typo>
                   </OrangeButton>
@@ -174,6 +176,7 @@ export const WaitingDetail = () => {
                         height="40px"
                         borderRadius="20px"
                         background="#F1F1F1"
+                        top = "-2px"
                       >
                         <img src="/vote.svg" />
                       </Box>
@@ -182,7 +185,7 @@ export const WaitingDetail = () => {
                           {comment.comment}
                         </Typo>
                         <Typo left="10px" fontWeight="400" size="14px">
-                          {comment.userId} •
+                          {comment.userId} &nbsp;&nbsp;•
                           <Typo left="10px" fontWeight="400" size="14px">
                             {comment.date}
                           </Typo>
@@ -211,12 +214,12 @@ export const WaitingDetail = () => {
                 </Typo>
               </Box>
               <OrangeButton>
-                <Typo size="15px" fontWight="700" color="#fff">
+                <Typo size="15px" fontWight="700" color="#fff" top="5px">
                   토큰으로 투표하기
                 </Typo>
               </OrangeButton>
               <ShareButton bottom="10px">
-                <Typo size="15px" fontWight="700" color="#000">
+                <Typo size="15px" fontWight="700" color="#000" top="5px">
                   공유하기
                 </Typo>
               </ShareButton>
@@ -236,7 +239,7 @@ export const WaitingDetail = () => {
                         {voted.userId}
                       </Typo>
                       <Typo left="10px" fontWeight="700" size="14px">
-                        {voted.howMany}개 •
+                        {voted.howMany}개&nbsp;&nbsp;&nbsp;&nbsp;•
                         <Typo left="10px" fontWeight="400" size="14px">
                           {voted.date}
                         </Typo>
@@ -248,7 +251,7 @@ export const WaitingDetail = () => {
               <Link to={`/progress`}>
                 <Button>
                   <img src="/star.svg" />
-                  <Typo color="#333" size="15px" fontWeight="700">
+                  <Typo color="#333" size="15px" fontWeight="700" top="5px">
                     기부하러가기
                   </Typo>
                 </Button>

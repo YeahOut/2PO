@@ -14,6 +14,8 @@ import {
   FullBar,
   Bar,
   BottomBox,
+  TypoContainer,
+  TypoOrange
 } from "./styled";
 
 export const ProgressSection = () => {
@@ -28,10 +30,12 @@ export const ProgressSection = () => {
 
   return (
     <div>
-      {/*       <TopBox>
-        <Typo size="48px">기부하기</Typo>
-        <Typo size="20px">서울시에 당신의 따뜻한 마음을 기부해주세요.</Typo>
-      </TopBox> */}
+      <TypoContainer>
+        <Typo size="48px">
+          다음 대기명단에 <TypoOrange size="48px">투표</TypoOrange>
+          하세요
+        </Typo>
+      </TypoContainer>
 
       <CategoryBox>
         <CategoryButton
@@ -88,7 +92,7 @@ export const ProgressSection = () => {
                     <TypoWhite size="25px">{content.title}</TypoWhite>
                     <TypoWhite size="20px">{content.organization}</TypoWhite>
                     <DonateButton>
-                      <TypoWhite size="20px">투표하기</TypoWhite>
+                      <TypoWhite size="18px">투표하기</TypoWhite>
                     </DonateButton>
                     <TypoWhite size="23px" top="85px">
                       달성률 {content.progress}%
@@ -105,7 +109,6 @@ export const ProgressSection = () => {
             ))}
         </ContentsBox>
       </div>
-      <BottomBox />
     </div>
   );
 };

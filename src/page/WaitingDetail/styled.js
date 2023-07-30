@@ -108,6 +108,7 @@ export const Box = styled.div`
   border-radius: ${(props) => props.borderRadius || "none"};
   flex-shrink: 0;
   ${customMargin}
+  margin-left: 7px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -118,7 +119,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   gap:90px;
   margin-bottom: 32px;
-  justify-content: center; /* 가운데 정렬을 추가 *
+  justify-content: center; /* 가운데 정렬을 추가 */
 `;
 
 export const OrangeButton = styled.button`
@@ -230,5 +231,5 @@ export const CommentBox = styled.div`
          margin-bottom: 20px;
          overflow: auto; /* 스크롤이 생기도록 설정합니다. */
          gap: 20px;
-         padding-top: 30px;
+         padding-top: 10px;
        `;

@@ -30,11 +30,6 @@ export const WaitingSection = () => {
 
   return (
     <div>
-      {/*       <TopBox>
-        <Typo size="48px">기부하기</Typo>
-        <Typo size="20px">서울시에 당신의 따뜻한 마음을 기부해주세요.</Typo>
-      </TopBox> */}
-
       <TypoContainer>
         <Typo size="48px">
           다음 대기명단에 <TypoOrange size="48px">투표</TypoOrange>
@@ -114,7 +109,6 @@ export const WaitingSection = () => {
             ))}
         </ContentsBox>
       </div>
-      <BottomBox />
     </div>
   );
 };
