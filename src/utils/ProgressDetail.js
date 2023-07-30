@@ -15,8 +15,8 @@ export const contents = [
     image: Progress0,
     progress: 21,
     barWidth: "60px",
-    totalDonation: "209,000",
-    targetDonation: "2,000,000",
+    totalDonation: "1,050,000",
+    targetDonation: "5,000,000",
     categories: ["all", "disaster"],
     date: "2023년",
     text: `저희 지역은 최근 폭우로 인한 피해로 큰 고통을 겪고 있습니다. 
@@ -32,7 +32,7 @@ export const contents = [
     image: Progress1,
     progress: 32,
     barWidth: "80px",
-    totalDonation: "480,000",
+    totalDonation: "640,000",
     targetDonation: "2,000,000",
     categories: ["all", "weak"],
     date: "2023년",
@@ -48,8 +48,8 @@ export const contents = [
     image: Progress2,
     progress: 75,
     barWidth: "180px",
-    totalDonation: "349,000",
-    targetDonation: "2,000,000",
+    totalDonation: "750,000",
+    targetDonation: "1,000,000",
     categories: ["all", "weak"],
     date: "2023년",
     text: `올해도 어김없이 뜨거운 여름철이 찾아왔습니다. 특히 우리 어르신들은 더위로 인해 힘들어하고 계실 것입니다. 
@@ -64,8 +64,8 @@ export const contents = [
     image: Progress3,
     progress: 25,
     barWidth: "80px",
-    totalDonation: "305,000",
-    targetDonation: "2,000,000",
+    totalDonation: "750,000",
+    targetDonation: "3,000,000",
     categories: ["all", "weak", "medical"],
     date: "2023년",
     text: `정우는 지난 몇 달 동안 건강 상태가 더욱 악화되었습니다. 정우는 소아암 환아로 치료 비용은 상당히 부담스러운 상황입니다. 
@@ -81,8 +81,8 @@ export const contents = [
     image: Progress4,
     progress: 33,
     barWidth: "95px",
-    totalDonation: "100,300",
-    targetDonation: "2,000,000",
+    totalDonation: "330,000",
+    targetDonation: "1,000,000",
     categories: ["all", "environment"],
     date: "2023년",
     text: `미세먼지로 인한 환경 오염은 우리가 직접적으로 개입할 수 있는 문제이기도 합니다. 
@@ -99,7 +99,7 @@ export const contents = [
     image: Progress5,
     progress: 70,
     barWidth: "180px",
-    totalDonation: "1,000,090",
+    totalDonation: "1,400,000",
     targetDonation: "2,000,000",
     categories: ["all", "animal", "medical"],
     date: "2023년",
@@ -110,39 +110,7 @@ export const contents = [
            코코의 수술을 위해 기부를 모으고 있으며, 작은 기부라도 큰 도움이 될 것입니다. 
            여러분들의 선행에 감사드립니다.`,
     comment1: "얼른 수술받고 회복하길..",
-  },
+  }
 
-  {
-    title: "튀르키예 지진 피해 복구",
-    organization: "유엔난민기구",
-    image: Progress6,
-    progress: 45,
-    barWidth: "130px",
-    totalDonation: "5,000,090",
-    targetDonation: "20,000,000",
-    categories: ["all", "disaster"],
-    date: "2023년",
-    text: `튀르키에서 발생한 지진으로 인해 많은 가정들이 피해를 입고 고통을 겪고 있습니다. 
-          이런 상황에서 우리는 그들을 위해 더 많은 도움을 주어야 합니다. 
-          지진 피해 복구를 위해 여러분들의 따뜻한 마음과 지원을 기다리고 있습니다.
-          지진은 그들의 생활과 건강에 큰 영향을 미치며, 특히 가정과 재산에 막대한 피해를 입힙니다. 
-          이제 우리가 그들을 위해 서로에게 도움을 주고, 힘을 합쳐 이 어려움을 극복하는 시간입니다.`,
-    comment1: "일상으로 빨리 되돌아오길 바라요",
-  },
-  {
-    title: "휠체어를 선물해 주세요.",
-    organization: "서울시장애인복지관",
-    image: Progress7,
-    progress: 70,
-    barWidth: "180px",
-    totalDonation: "200,000",
-    targetDonation: "2,000,000",
-    categories: ["all", "weak"],
-    date: "2023년",
-    text: `우리 지역에서는 여러분들의 따뜻한 마음과 기부로 휠체어를 구입하고 전달하고자 합니다. 
-          작은 도움이지만, 그 분들에게 큰 힘이 될 것입니다. 함께 움직이는 삶을 선물하는 이 선행에 여러분들의 참여를 부탁드립니다.
-          이러한 기부로 우리 지역에서 휠체어가 필요한 분들이 더 편안하게 삶을 즐길 수 있도록 돕는 일에 참여하시면 정말 감사드리겠습니다. 
-          지역 사회의 한 구성원으로서, 우리 모두가 그분들에게 사랑과 배려를 전달해주길 바랍니다.`,
-    comment1: "작은 기부지만 도움이 됐으면 합니다!",
-  },
+
 ];

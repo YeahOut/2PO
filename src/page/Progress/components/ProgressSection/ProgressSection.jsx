@@ -88,19 +88,19 @@ export const ProgressSection = () => {
                 <Contents key={index}>
                   <Image src={content.image} />
                   <Shadow align="column">
-                    <TypoWhite size="18px">{content.title}</TypoWhite>
-                    <TypoWhite size="16px">{content.organization}</TypoWhite>
+                    <TypoWhite size="25px">{content.title}</TypoWhite>
+                    <TypoWhite size="20px">{content.organization}</TypoWhite>
                     <DonateButton>
-                      <TypoWhite size="14px">투표하기</TypoWhite>
+                      <TypoWhite size="20px">투표하기</TypoWhite>
                     </DonateButton>
-                    <TypoWhite size="14px" top="85px">
+                    <TypoWhite size="23px" top="85px">
                       달성률 {content.progress}%
                     </TypoWhite>
                     <FullBar>
                       <Bar width={content.barWidth} />
                     </FullBar>
-                    <TypoWhite size="14px" top="7px" left="1px">
-                      누적 기부 {content.totalDonation}원
+                    <TypoWhite size="16px" top="7px" left="1px">
+                      누적 기부 {content.totalDonation}원 / {content.targetDonation}원
                     </TypoWhite>
                   </Shadow>
                 </Contents>
