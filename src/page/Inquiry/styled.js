@@ -34,10 +34,10 @@ export const QuestionTitleInput = styled.input`
   width: 617px;
   height: 50px;
   border: 1px solid #e2e8f0;
-  border-radius: 15px;
+  border-radius: 10px;
   background: #fff;
   font-size: 17px;
-  font-weight: 500;
+  /* font-weight: 500; */
   padding-left: 20px;
   margin-left: 15px;
 `;
