@@ -4,8 +4,6 @@ import Waiting2 from "../assets/WaitingImage/Waiting2.jpeg";
 import Waiting3 from "../assets/WaitingImage/Waiting3.jpeg";
 import Waiting4 from "../assets/WaitingImage/Waiting4.jpeg";
 import Waiting5 from "../assets/WaitingImage/Waiting5.jpeg";
-import Waiting6 from "../assets/WaitingImage/Waiting6.jpeg";
-import Waiting7 from "../assets/WaitingImage/Waiting7.jpeg";
 
 export const WaitingImage = [{ id: "0", name: "Waiting1", src: Waiting1 }];
 

@@ -26,3 +26,5 @@
   `npm install semantic-ui-react semantic-ui-css`
 - 토큰사용법 페이지 사이드 바 구현 명령어
   `npm install react-scrollspy --save`
+- 홈페이지 이미지 슬라이더 구현 명령어
+  `npm install react-multi-carousel --save`

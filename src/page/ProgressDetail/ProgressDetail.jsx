@@ -11,9 +11,7 @@ import {
   BigImage,
   ImageContainer,
   BackContainer,
-  TextGroup,
   Line,
-  TextBox,
   Blank,
   More,
   VoteContainer,
@@ -23,27 +21,18 @@ import {
   ButtonContainer,
   ButtonContainer2,
   CommentContainer,
-  Line2,
   ManagerContainer,
   VoteContainer2,
   CommentContainer2,
-  TypoWhite,
   FullBar,
   Bar,
 } from "./styled";
 
 import {
   Button,
-  Input,
   Comment,
   Form,
-  Header,
-  Divider,
-  Icon,
-  Image,
   Item,
-  Card,
-  Feed,
 } from "semantic-ui-react";
 
 
