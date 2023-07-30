@@ -15,7 +15,7 @@ import Sol2 from "../assets/image/JJANG2.png";
 import Sol3 from "../assets/image/JJANG3.png";
 import Sol4 from "../assets/image/JJANG4.png";
 import Sol5 from "../assets/image/JJANG5.JPG";
-import Sol6 from "../assets/image/JJANG6.JPG";
+import Sol6 from "../assets/image/JJANG6.JPG"; 
 
 const ImageData = [
   {
