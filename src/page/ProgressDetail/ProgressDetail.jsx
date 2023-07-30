@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useEffect, useState }from "react";
 import { useParams, Link } from "react-router-dom";
 import { contents } from "../../utils/ProgressDetail";
 import {
@@ -37,9 +37,10 @@ import {
 
 
 export const ProgressDetail = () => {
-  const { id } = useParams();
-  const index = parseInt(id);
-  const selectedContent = contents[index];
+    const { id } = useParams();
+    const index = parseInt(id);
+    const selectedContent = contents[index];
+
   return (
     <Root>
       <BackContainer>
@@ -67,12 +68,12 @@ export const ProgressDetail = () => {
               <More />
             </TextContainer>
             <ButtonContainer>
-              <VoteCoinButton top="32px" background="#FF7425">
+              <VoteCoinButton top="32px" >
                 <Typo size="15px" fontWight="700" color="#000">
                   코인으로 후원하기
                 </Typo>
               </VoteCoinButton>
-              <VoteAcoountButton top="32px" background="#fff">
+              <VoteAcoountButton top="32px" >
                 <Typo size="15px" fontWight="700" color="#000">
                   계좌로 후원하기
                 </Typo>
@@ -196,13 +197,12 @@ export const ProgressDetail = () => {
               </Typo>
               <Blank />
               <VoteContainer2>
-                <VoteCoinButton top="15px" background="#FF7425">
+                <VoteCoinButton top="15px" >
                   <Typo size="15px" fontWight="700" color="#000">
                     코인으로 후원하기
                   </Typo>
                 </VoteCoinButton>
-                <Blank />
-                <VoteAcoountButton top="15px" background="#fff">
+                <VoteAcoountButton top="15px">
                   <Typo size="15px" fontWight="700" color="#000">
                     계좌로 후원하기
                   </Typo>
@@ -290,7 +290,7 @@ export const ProgressDetail = () => {
                 </Link>
               </ButtonContainer2>
             </VoteContainer>
-          </GridItem2>
+            </GridItem2>
         </GridContainer>
       </BackContainer>
     </Root>
