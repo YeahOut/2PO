@@ -137,10 +137,10 @@ export const ButtonContainer2 = styled.div`
   flex-direction: row;
   align-items: center;
   gap:0px;
+  margin-top:10px;
   margin-bottom:10px;
-  margin-left:20px;
-  justify-content: space-between;
-  width:100;`;
+  justify-content: center;
+  width:100%;`;
 
 
 export const VoteCoinButton = styled.button`
@@ -160,7 +160,7 @@ export const VoteCoinButton = styled.button`
         ${customMargin};
        `;
 
-export const VoteAcoountButton = styled.button`
+export const ShareButton = styled.button`
          display: flex;
          width: 315.7px;
          min-height: 48px;
@@ -393,3 +393,9 @@ export const CommentBox = styled.div`
          gap: 20px;
          margin-bottom:0px;
        `;
+
+export const FixedSidebar = styled.div`
+  position: fixed;
+  top: 310px; // 200px은 예시입니다. 필요한 위치에 따라 변경하시면 됩니다.
+  right: 0;
+`;

@@ -92,7 +92,7 @@ export const ProgressSection = () => {
                     <TypoWhite size="25px">{content.title}</TypoWhite>
                     <TypoWhite size="20px">{content.organization}</TypoWhite>
                     <DonateButton>
-                      <TypoWhite size="18px">투표하기</TypoWhite>
+                      <TypoWhite size="18px">기부하기</TypoWhite>
                     </DonateButton>
                     <TypoWhite size="23px" top="85px">
                       달성률 {content.progress}%
