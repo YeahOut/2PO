@@ -28,3 +28,5 @@
   `npm install react-scrollspy --save`
 - 홈페이지 이미지 슬라이더 구현 명령어
   `npm install react-multi-carousel --save`
+- FAQ 구현을 위한 명령어
+  `npm install --save react-faq-component`

@@ -32,7 +32,7 @@ export const ProgressSection = () => {
     <div>
       <TypoContainer>
         <Typo size="48px">
-          다음 대기명단에 <TypoOrange size="48px">투표</TypoOrange>
+          다음 기부명단에 <TypoOrange size="48px">기부</TypoOrange>
           하세요
         </Typo>
       </TypoContainer>
@@ -89,10 +89,10 @@ export const ProgressSection = () => {
                 <Contents key={index}>
                   <Image src={content.image} />
                   <Shadow align="column">
-                    <TypoWhite size="25px">{content.title}</TypoWhite>
+                    <TypoWhite size="24px">{content.title}</TypoWhite>
                     <TypoWhite size="20px">{content.organization}</TypoWhite>
                     <DonateButton>
-                      <TypoWhite size="18px">투표하기</TypoWhite>
+                      <TypoWhite size="18px">기부하기</TypoWhite>
                     </DonateButton>
                     <TypoWhite size="23px" top="85px">
                       달성률 {content.progress}%

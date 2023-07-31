@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* 스크롤바 전체 기본 꾸미기 */
   body::-webkit-scrollbar {
-    width: 12px; /* 세로축 스크롤바 폭 너비 */
+    width: 12px;
   }
 
   /* 스크롤바 막대 꾸미기 */
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
   }
 
-  a, ul, li, h1, h2 {
+  a, ul, li, h1, h2, h3 {
     all: unset;
     margin: 0;
     padding: 0;

@@ -1,45 +1,109 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { contents } from "../../utils/ProgressDetail";
+import { contents, List} from "../../utils/ProgressDetail";
 import {
   Root,
   TopBox,
   Typo,
   GridContainer,
   GridItem,
-  GridItem2,
-  BigImage,
+  Image,
   ImageContainer,
   BackContainer,
-  Line,
-  Blank,
-  More,
   VoteContainer,
   TextContainer,
-  VoteCoinButton,
-  VoteAcoountButton,
+  OrangeButton,
+  ShareButton,
   ButtonContainer,
-  ButtonContainer2,
-  CommentContainer,
-  ManagerContainer,
-  VoteContainer2,
-  CommentContainer2,
   FullBar,
   Bar,
+  VoteList,
+  ListBox,
+  Button2,
+  Comment,
+  CommentBox,
+  Box
 } from "./styled";
 
-import {
-  Button,
-  Comment,
-  Form,
-  Item,
-} from "semantic-ui-react";
-
+import { Header, Button, Popup, Grid } from 'semantic-ui-react'
 
 export const ProgressDetail = () => {
-    const { id } = useParams();
-    const index = parseInt(id);
-    const selectedContent = contents[index];
+  const [scrollY, setScrollY] = useState(0);
+  const [voteContainerTop, setVoteContainerTop] = useState(0);
+  const voteContainerHeight = 670; // VoteContainer의 높이 설정 (고정값 또는 동적으로 계산된 값)
+  const windowHeight = window.innerHeight;
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const gridItem = document.getElementById("grid-item");
+    const gridItemRect = gridItem.getBoundingClientRect();
+    const voteContainerTop = gridItemRect.top + scrollY;
+
+    // VoteContainer가 화면 밖으로 벗어나지 않도록 제한
+    const maxTop = windowHeight - voteContainerHeight - 40;
+    const limitedVoteContainerTop = Math.min(maxTop, voteContainerTop);
+
+    setVoteContainerTop(limitedVoteContainerTop);
+  }, [scrollY]);
+
+    const [commentValue, setCommentValue] = useState("");
+
+  // 댓글 입력 값이 변경될 때 호출되는 함수
+  const handleCommentChange = (e) => {
+    // 댓글 입력 값을 상태(state)에 저장
+    setCommentValue(e.target.value);
+  };
+
+  // 댓글 등록 버튼을 클릭했을 때 호출되는 함수
+  const handleCommentSubmit = () => {
+    // 댓글 등록 처리 로직 추가
+    console.log("댓글 등록:", commentValue);
+    // 댓글 입력 값을 초기화
+    setCommentValue("");
+  };
+
+//공유하기 팝업
+  
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const handleShareButtonClick = () => {
+    setPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+  };
+
+  const shareToKakaoTalk = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
+  const shareToInstagram = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+  const shareToTwitter = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
+  const { id } = useParams();
+  const index = parseInt(id);
+  const selectedContent = contents[index];
 
   return (
     <Root>
@@ -49,250 +113,186 @@ export const ProgressDetail = () => {
             {selectedContent.title}
           </Typo>
           <Typo size="15px" left="100px" top="20px">
-            후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
+          후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
             <img src="/tag.svg" alt="테그" />
             {selectedContent.organization}
           </Typo>
         </TopBox>
+
         <GridContainer>
           <GridItem>
             <ImageContainer>
-              <BigImage src={selectedContent.image} />
+              <Image src={selectedContent.image} />
             </ImageContainer>
-            <TextContainer>
-              <Line />
-              <Typo size="16px" fontWeight="400" color="#333" top="0px">
+            <TextContainer width="800px" height="auto">
+              <Typo size="16px" fontWeight="400" color="#333" top="40px">
                 {selectedContent.text}
               </Typo>
-              <Blank />
-              <More />
-            </TextContainer>
-            <ButtonContainer>
-              <VoteCoinButton top="32px" >
-                <Typo size="15px" fontWight="700" color="#000">
-                  코인으로 후원하기
-                </Typo>
-              </VoteCoinButton>
-              <VoteAcoountButton top="32px" >
-                <Typo size="15px" fontWight="700" color="#000">
-                  계좌로 후원하기
-                </Typo>
-              </VoteAcoountButton>
-            </ButtonContainer>
-            <Line />
-            <ManagerContainer>
-              <Item.Group>
-                <Typo size="25px" left="0px">
-                  후원 담당자
-                </Typo>
-                <Blank />
-                <Item>
-                  <Item.Image size="tiny" src="/manager.svg" alt="매니저" />
-                  <Item.Content>
-                    <Item.Header as="a">김동국</Item.Header>
-                    <Item.Meta> {selectedContent.organization} 대표</Item.Meta>
-                    <Item.Extra>연락하기</Item.Extra>
-                  </Item.Content>
-                </Item>
-              </Item.Group>
-            </ManagerContainer>
-            <Line />
-            <CommentContainer>
-              <Comment.Group>
-                <Typo size="25px" left="0px">
-                  응원댓글
-                </Typo>
-                <Blank />
-                <Typo size="13px" left="0px" color="gray">
-                  당신의 따스한 한 마디로 세상을 빛낼 수 있습니다.
-                </Typo>
-                <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      밥먹는 제이지{" "}
-                      <Comment.Metadata>
-                        <div>3시간 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
-                    <Comment.Text>
-                    {selectedContent.comment1}
-                    </Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                </Comment>
-
-                <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      유준영
-                      <Comment.Metadata>
-                        <div>12시간 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
-
-                    <Comment.Text>응원합니다!</Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                </Comment>
-
-                <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      네잎클로버{" "}
-                      <Comment.Metadata>
-                        <div>1일 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
-
-                    <Comment.Text>
-                      밥 많이 먹고 공부에 열중했으면 좋겠어요~
-                    </Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                </Comment>
-
-                <Form reply>
-                  <Form.TextArea />
-                  <Button
-                    content="댓글입력"
-                    labelPosition="left"
-                    icon="edit"
-                    primary
-                  />
-                </Form>
-              </Comment.Group>
-              <Line />
-              <Blank />
-              <Typo size="15px" left="0px" top="0px">
-                후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
-                <img src="/tag.svg" alt="테그" />
-                {selectedContent.organization}
+              <ButtonContainer>
+                <OrangeButton top="32px">
+                  <Typo size="15px" fontWeight="700" color="#fff" top="5px">
+                  코인으로 기부하기
+                  </Typo>
+                </OrangeButton>
+                <ShareButton top="32px" oncluck>
+                  <Typo size="15px" fontWeight="700" color="#000" top="5px">
+                  공유하기
+                  </Typo>
+                </ShareButton>
+              </ButtonContainer>
+           </TextContainer>
+            <Box width="800px" height="auto" flexDirection="column">
+              <Typo size="23px" fontWeight="600" top="35px" bottom="35px">
+                후원 담당자
               </Typo>
-              <Line />
-            </CommentContainer>
+              <Box width="800px" height="auto">
+                <img src="/profile.svg" />
+                <Box width="auto" height="auto" flexDirection="column">
+                  <Typo left="10px" fontWeight="700" size="15px">
+                    {selectedContent.manager}
+                  </Typo>
+                  <Typo left="10px" fontWeight="400" size="13px">
+                    {selectedContent.organization}
+                  </Typo>
+                </Box>
+              </Box>
+              <Button2 top="35px" width="120px" height="40px">
+                <Typo color="#333" size="15px" fontWeight="700" top="7px">
+                  연락하기
+                </Typo>
+              </Button2>
+            </Box>
+            <TextContainer width="800px" height="auto">
+              <Typo color="#333" size="22px" fontWeight="600" top="20px">
+                응원 댓글
+              </Typo>
+              <Typo color="#767676" size="14px" fontWeight="400" top="20px">
+                따스한 한 마디로 세상을 빛낼 수 있습니다.
+              </Typo>
+              <Box height="auto" bottom="20px" flexDirection="column">
+                <Comment>
+                  <Box
+                    width="650px"
+                    height="29px"
+                    background="#fff"
+                    left="25px"
+                    alignItem="center"
+                    top="3px"
+                  >
+                    <Typo size="14px" fontWeight="300" top="2px" left="5px">
+                      <input
+                        type="text"
+                        value={commentValue} // 댓글 입력 값
+                        onChange={handleCommentChange} // 댓글 입력 값 변경 이벤트 처리 함수
+                        placeholder="응원댓글을 달아주세요."
+                      />
+                    </Typo>
+                  </Box>
+                  <OrangeButton
+                    width="66px"
+                    height="29px"
+                    onClick={handleCommentSubmit}
+                    top="3px"
+                  >
+                    <Typo size="13px" color="#fff" fontWeight="700" top="3px">
+                      등록
+                    </Typo>
+                  </OrangeButton>
+                </Comment>
+                <CommentBox>
+                  {selectedContent.comments.map((comment, index) => (
+                    <VoteList key={index}>
+                      <Box
+                        width="40px"
+                        height="40px"
+                        borderRadius="20px"
+                        background="#F1F1F1"
+                        top = "-2px"
+                      >
+                        <img src="/vote.svg" />
+                      </Box>
+                      <Box width="200" height="40px" flexDirection="column">
+                        <Typo left="10px" fontWeight="700" size="15px">
+                          {comment.comment}
+                        </Typo>
+                        <Typo left="10px" fontWeight="400" size="14px">
+                          {comment.userId} &nbsp;&nbsp;•
+                          <Typo left="10px" fontWeight="400" size="14px">
+                            {comment.date}
+                          </Typo>
+                        </Typo>
+                      </Box>
+                    </VoteList>
+                  ))}
+                </CommentBox>
+              </Box>
+            </TextContainer>
           </GridItem>
 
-          <GridItem2>
-            <VoteContainer>
-              <Typo size="30px" top="10px">
-              {selectedContent.progress}%
-              </Typo>
+          <GridItem id="grid-item">
+            <VoteContainer style={{ top: `${voteContainerTop}px` }}>
+
+              <Box width="313px" height="24px" top="20px">
+ 
+                <Typo size="20px" fontWight="700" >
+                  {selectedContent.totalDonation}원 / {selectedContent.targetDonation}원
+                </Typo>
+              </Box>
               <FullBar>
-                <Bar width={selectedContent.barWidth} />
+              <Bar width={selectedContent.barWidth} />
               </FullBar>
-              <Typo size="20px">
-              {selectedContent.totalDonation}원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목표: {selectedContent.targetDonation}원
-              </Typo>
-              <Typo size="12px" color="gray" top="5px">
-                30명 기부
-              </Typo>
-              <Blank />
-              <VoteContainer2>
-                <VoteCoinButton top="15px" >
-                  <Typo size="15px" fontWight="700" color="#000">
-                    코인으로 후원하기
+              <Box width="313px" height="24px">
+                <Typo size="15px" fontWight="700" color="#707070">
+                  30명 기부
+                </Typo>
+              </Box>
+              <OrangeButton>
+                <Typo size="15px" fontWight="700" color="#fff" top="5px">
+                코인으로 기부하기
+                </Typo>
+              </OrangeButton>
+              <ShareButton bottom="10px">
+                <Typo size="15px" fontWight="700" color="#000" top="5px">
+                  공유하기
+                </Typo>
+              </ShareButton>
+              <ListBox>
+                {List.map((voted, index) => (
+                  <VoteList key={index}>
+                    <Box
+                      width="40px"
+                      height="40px"
+                      borderRadius="20px"
+                      background="#F1F1F1"
+                    >
+                      <img src="/vote.svg" />
+                    </Box>
+                    <Box width="200" height="40px" flexDirection="column">
+                      <Typo left="10px" fontWeight="400" size="15px">
+                        {voted.userId}
+                      </Typo>
+                      <Typo left="10px" fontWeight="700" size="14px">
+                        {voted.howMany}원&nbsp;&nbsp;&nbsp;&nbsp;•
+                        <Typo left="10px" fontWeight="400" size="14px">
+                          {voted.date}
+                        </Typo>
+                      </Typo>
+                    </Box>
+                  </VoteList>
+                ))}
+              </ListBox>
+              <Link to={`/rank`}>
+                <Button2>
+                  <img src="/star.svg" />
+                  <Typo color="#333" size="15px" fontWeight="700" top="5px">
+                  기부순위 보러가기
                   </Typo>
-                </VoteCoinButton>
-                <VoteAcoountButton top="15px">
-                  <Typo size="15px" fontWight="700" color="#000">
-                    계좌로 후원하기
-                  </Typo>
-                </VoteAcoountButton>
-              </VoteContainer2>
-              <Blank />
-
-              <CommentContainer2>
-                <Comment.Group>
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        네잎클로버
-                        <Comment.Metadata>
-                          <div> · 1일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>200,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        숨은천사
-                        <Comment.Metadata>
-                          <div> · 1일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>2,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        공소연
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>150,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        박지형
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>100원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        최예인
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>500,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-                </Comment.Group>
-              </CommentContainer2>
-
-              <ButtonContainer2>
-                <Button basic color="green">
-                  모두보기
-                </Button>
-                <Link to="/rank">
-                  <Button basic color="black">
-                    ☆기부순위 보러가기
-                  </Button>
-                </Link>
-              </ButtonContainer2>
+                </Button2>
+              </Link>
             </VoteContainer>
-            </GridItem2>
+          </GridItem>
         </GridContainer>
       </BackContainer>
-    </Root>
-  );
-};
+      </Root>
+      );
+    };

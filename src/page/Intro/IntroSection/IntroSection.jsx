@@ -46,8 +46,8 @@ export const IntroSection = () => {
           독특한 경험과 보상을 선사합니다.
         </Typo>
         <ImageBox>
-          <Image src="./기부비하인드.png" />
-          <Image src="./투표하기.png" />
+          <Image src="./Intro1.png" />
+          <Image src="./Intro2.png" />
         </ImageBox>
       </TextBox>
     </BackContainer>

@@ -15,7 +15,6 @@ import {
   DonateButton,
   FullBar,
   Bar,
-  BottomBox,
 } from "./styled";
 
 export const WaitingSection = () => {

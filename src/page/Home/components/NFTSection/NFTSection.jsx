@@ -12,8 +12,8 @@ import {
   Typo,
   TypoContainer,
 } from "./styled";
-import girlNFTImg from "../../../../assets/image/main_girl.png";
-import monkeyNFTImg from "../../../../assets/image/main_monkey.png";
+import girlNFTImg from "../../../../assets/image/NFT1.png";
+import monkeyNFTImg from "../../../../assets/image/NFT2.png";
 
 export const NFTSection = () => {
   return (
@@ -30,7 +30,7 @@ export const NFTSection = () => {
           <Typo bottom="60px">기부런 NFT와 시작할 수 있습니다.</Typo>
           <NFTContainer>
             <NFTItem>
-              <NFTImg src={girlNFTImg} alt="girl" />
+              <NFTImg src={girlNFTImg} alt="NFT1" />
               <InfoTypoContainer>
                 <Typo top="3px" size="20px" weight="700">
                   Amazing

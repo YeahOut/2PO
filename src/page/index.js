@@ -9,4 +9,9 @@ export { WaitingDetail } from "./WaitingDetail";
 export { Transaction } from "./Transaction";
 export { Token } from "./Token";
 export { Inquiry } from "./Inquiry";
-export {Intro} from "./Intro";
+export { NFT } from "./NFT";
+export { Throw } from "./Throw";
+export { Wallet } from "./Wallet";
+export { FAQ } from "./FAQ";
+export { Intro } from "./Intro";
+

@@ -1,11 +1,8 @@
 import React from "react";
 import {
-  Description,
   NotiTitle,
   NotiTitleContainer,
   NotiBeforeDonationContainer,
-  Title,
-  TitleContainer,
   TokenContainer,
   NotiIcon,
   NotiDescription,

@@ -60,9 +60,9 @@ export const CycleSection = () => {
         <YellowCircle top="272px" left="5px" width="100px" height="100px" />
         <YellowCircle top="0px" left="524px" width="42px" height="42px" />
         <OrangeCircle top="62px" left="56px" width="34px" height="34px" />
-        <OrangeCircle top="720px" left="673px" width="16px" height="16px" />
+        <OrangeCircle top="700px" left="673px" width="16px" height="16px" />
         <PurpleCircle top="45px" left="681px" width="101px" height="101px" />
-        <PurpleCircle top="113px" left="1163px" width="42px" height="42px" />
+        <PurpleCircle top="108px" left="1163px" width="42px" height="42px" />
       </Container>
     </Root>
   );
