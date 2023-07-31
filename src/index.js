@@ -15,6 +15,7 @@ import {
   Transaction,
   Token,
   Inquiry,
+  Throw
 } from "./page";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
