@@ -32,7 +32,7 @@ export const ProgressSection = () => {
     <div>
       <TypoContainer>
         <Typo size="48px">
-          다음 대기명단에 <TypoOrange size="48px">투표</TypoOrange>
+          다음 기부명단에 <TypoOrange size="48px">기부</TypoOrange>
           하세요
         </Typo>
       </TypoContainer>

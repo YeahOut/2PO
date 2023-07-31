@@ -340,6 +340,7 @@ export const ListBox = styled.div`
   border-bottom: solid 4px #e6f6ef;
   padding-top: 10px;
   overflow: auto; /* 스크롤이 생기도록 설정합니다. */
+  gap:22px;
 `;
 
 export const VoteList = styled.div`
