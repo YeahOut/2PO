@@ -15,7 +15,9 @@ import {
   Transaction,
   Token,
   Inquiry,
-  Nft
+  Nft,
+  Throw,
+  Wallet
 } from "./page";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -34,9 +36,11 @@ root.render(
           <Route path="/progress" element={<Progress />} />
           <Route path="/progress/:id" element={<ProgressDetail />} />
           <Route path="/token" element={<Token />} />
+          <Route path="/throw" element={<Throw />} />
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/inquiry" element={<Inquiry />}/>
           <Route path="/donate" element={<Nft />}/>
+          <Route path="/wallet" element={<Wallet />} />
         </Route>
       </Routes>
     </BrowserRouter>
