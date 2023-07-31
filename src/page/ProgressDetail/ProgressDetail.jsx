@@ -109,7 +109,7 @@ export const ProgressDetail = () => {
                   </Typo>
                 </ShareButton>
               </ButtonContainer>
-           < /TextContainer>
+           </TextContainer>
             <Box width="800px" height="auto" flexDirection="column">
               <Typo size="23px" fontWeight="600" top="35px" bottom="35px">
                 후원 담당자
