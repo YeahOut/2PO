@@ -29,7 +29,7 @@ export const Wallet = () => {
       <ContentContainer>
       
         <UpIcon alt="" src="/Wallet1.png" />
-        <TextIcon alt="" src="/Wallet2.png" />
+        <TextIcon alt="" src="/Wallet(2).png" />
         <Menu>
           <Div1 />
           <Httpschromegooglecomwebs
