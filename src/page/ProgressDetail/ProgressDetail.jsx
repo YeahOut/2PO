@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Modal } from "./Modal/Modal";
 import { useParams, Link } from "react-router-dom";
 import { contents, List} from "../../utils/ProgressDetail";
+import "./style.css"
 import {
   Root,
   TopBox,
@@ -22,12 +24,56 @@ import {
   Button2,
   Comment,
   CommentBox,
-  Box
+  Box,
+  CloseButton,
+  ModalContent,
+  Input,
 } from "./styled";
+import { Dropdown, Menu } from 'semantic-ui-react'
 
-import { Header, Button, Popup, Grid } from 'semantic-ui-react'
+
+//import { Header, Button, Popup, Grid } from 'semantic-ui-react'
 
 export const ProgressDetail = () => {
+  
+  const options = [
+    "비트코인",
+    "이더리움",
+    "테더",
+    // Add more options as needed
+  ];
+  const [selectedOption, setSelectedOption] = useState(options[0]); // Set the initial selected option to the first one in the array
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  
+    //모달창
+    const [showFirstModal, setShowFirstModal] = useState(false); // 첫 번째 모달 상태
+    const [showSecondModal, setShowSecondModal] = useState(false); // 두 번째 모달 상태
+  
+    const handleOpenFirstModal = () => {
+      setShowFirstModal(true);
+    };
+  
+    const handleCloseFirstModal = () => {
+      setShowFirstModal(false);
+    };
+  
+    const handleOpenSecondModal = () => {
+      setShowSecondModal(true);
+    };
+  
+    const handleCloseSecondModal = () => {
+      setShowSecondModal(false);
+    };
+  
+    const handleCloseAndOpen = () => {
+      setShowFirstModal(false);
+      setShowSecondModal(true); // 두 번째 모달을 엽니다.
+    };
+
+    
+
   const [scrollY, setScrollY] = useState(0);
   const [voteContainerTop, setVoteContainerTop] = useState(0);
   const voteContainerHeight = 670; // VoteContainer의 높이 설정 (고정값 또는 동적으로 계산된 값)
@@ -72,35 +118,6 @@ export const ProgressDetail = () => {
     setCommentValue("");
   };
 
-//공유하기 팝업
-  
-  const [popupOpen, setPopupOpen] = useState(false);
-
-  const handleShareButtonClick = () => {
-    setPopupOpen(true);
-  };
-
-  const handlePopupClose = () => {
-    setPopupOpen(false);
-  };
-
-  const shareToKakaoTalk = () => {
-    // 카카오톡 공유하기 기능을 구현하는 함수
-    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
-    window.open(kakaoLink, '_blank');
-  };
-
-  const shareToInstagram = () => {
-    // 카카오톡 공유하기 기능을 구현하는 함수
-    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
-    window.open(kakaoLink, '_blank');
-  };
-  const shareToTwitter = () => {
-    // 카카오톡 공유하기 기능을 구현하는 함수
-    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
-    window.open(kakaoLink, '_blank');
-  };
-
   const { id } = useParams();
   const index = parseInt(id);
   const selectedContent = contents[index];
@@ -129,12 +146,137 @@ export const ProgressDetail = () => {
                 {selectedContent.text}
               </Typo>
               <ButtonContainer>
-                <OrangeButton top="32px">
+
+              <OrangeButton onClick={handleOpenFirstModal} top="32px">
                   <Typo size="15px" fontWeight="700" color="#fff" top="5px">
                   코인으로 기부하기
                   </Typo>
                 </OrangeButton>
-                <ShareButton top="32px" oncluck>
+
+                {showFirstModal && (
+                  <Modal
+                    isOpen={showFirstModal}
+                    onClose={handleCloseFirstModal}
+                  >
+                    
+                    <ModalContent>
+                    <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="30px"
+                        bottom="10px"
+                      >
+                 코인 종류를 선택해주세요.
+                      </Typo>
+                      <label htmlFor="dropdown"></label>
+    <select id="dropdown" value={selectedOption} onChange={handleOptionChange} className="dropdown-menu">
+      {options.map((option, index) => (
+        <option key={index} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+                        <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="50px"
+                        bottom="10px"
+                      >
+                        기부 수량을 입력해주세요.
+                      </Typo>
+
+                      <Input
+                        type="text"
+                        value={commentValue} // 댓글 입력 값
+                        onChange={handleCommentChange} // 댓글 입력 값 변경 이벤트 처리 함수
+                        background="#E5E7EB"
+                        placeholder="투표할 수량을 입력해주세요"
+                      />
+                      <Typo size="13px" color="#647488"  top="10px" right="-290px">
+                        KRW : 19283.18원
+                        </Typo>
+                        <Box width="400px" height="auto" gap="20px" >
+                        <Typo size="16px" color="#647488" top="20px" bottom="10px" left="30px" right="30px">
+                          모금 비율: 0.3%
+                        </Typo>
+                        <Typo size="16px" color="#647488" top="20px" bottom="10px">
+                          지급 예정 토큰: 120PO (2PO)
+                        </Typo>
+                      </Box>
+                      <Box
+                        width="400px"
+                        height="auto"
+                        top="15px"
+                        margin-bottom= "0px"
+                        left="150px"
+                      >
+                        <CloseButton
+                          background="#FF7425"
+                          onClick={handleCloseAndOpen}
+                          right="20px"
+                        >
+                          <Typo size="15px" fontWeight="700" color="#fff">
+                            확인
+                          </Typo>
+                        </CloseButton>
+                        <CloseButton onClick={handleCloseFirstModal}>
+                          <Typo size="15px" fontWeight="700" color="#fff">
+                            닫기
+                          </Typo>
+                        </CloseButton>
+                      </Box>
+                    </ModalContent>
+                  </Modal>
+                )}
+                {showSecondModal && (
+                  <Modal
+                    isOpen={showSecondModal}
+                    onClose={handleCloseSecondModal}
+                  >
+                    <ModalContent>
+                      <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="90px"
+                        bottom="30px"
+                      >
+                        기부가 완료되었습니다.
+                      </Typo>
+                      <Typo size="16px" color="#647488" bottom="10px">
+                        계정: Account1
+                      </Typo>
+                      <Typo size="16px" color="#647488" bottom="20px">
+                        보유 코인: 10,000 ETH
+                      </Typo>
+                      <Box
+                        width="400px"
+                        height="auto"
+                        top="15px"
+                        flexDirection="row"
+                        justifyContent="center"
+                        gap="20px"
+                      >
+                        <CloseButton
+                          background="#FF7425"
+                          onClick={handleCloseSecondModal}
+                          left="140px"
+                        >
+                          <Typo size="15px" fontWeight="700" color="#fff" >
+                            확인
+                          </Typo>
+                        </CloseButton>
+                      </Box>
+                    </ModalContent>
+                  </Modal>
+                )}
+
+                <ShareButton top="32px" >
                   <Typo size="15px" fontWeight="700" color="#000" top="5px">
                   공유하기
                   </Typo>
@@ -246,11 +388,134 @@ export const ProgressDetail = () => {
                   30명 기부
                 </Typo>
               </Box>
-              <OrangeButton>
-                <Typo size="15px" fontWight="700" color="#fff" top="5px">
-                코인으로 기부하기
-                </Typo>
-              </OrangeButton>
+              <OrangeButton onClick={handleOpenFirstModal} top="15px">
+                  <Typo size="15px" fontWeight="700" color="#fff" top="5px">
+                  코인으로 기부하기
+                  </Typo>
+                </OrangeButton>
+
+                {showFirstModal && (
+                  <Modal
+                    isOpen={showFirstModal}
+                    onClose={handleCloseFirstModal}
+                  >
+                    
+                    <ModalContent>
+                    <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="30px"
+                        bottom="10px"
+                      >
+                 코인 종류를 선택해주세요.
+                      </Typo>
+                      <label htmlFor="dropdown"></label>
+    <select id="dropdown" value={selectedOption} onChange={handleOptionChange} className="dropdown-menu">
+      {options.map((option, index) => (
+        <option key={index} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+                        <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="50px"
+                        bottom="10px"
+                      >
+                        기부 수량을 입력해주세요.
+                      </Typo>
+
+                      <Input
+                        type="text"
+                        value={commentValue} // 댓글 입력 값
+                        onChange={handleCommentChange} // 댓글 입력 값 변경 이벤트 처리 함수
+                        background="#E5E7EB"
+                        placeholder="투표할 수량을 입력해주세요"
+                      />
+                      <Typo size="13px" color="#647488"  top="10px" right="-290px">
+                        KRW : 19283.18원
+                        </Typo>
+                        <Box width="400px" height="auto" gap="20px" >
+                        <Typo size="16px" color="#647488" top="20px" bottom="10px" left="30px" right="30px">
+                          모금 비율: 0.3%
+                        </Typo>
+                        <Typo size="16px" color="#647488" top="20px" bottom="10px">
+                          지급 예정 토큰: 120PO (2PO)
+                        </Typo>
+                      </Box>
+                      <Box
+                        width="400px"
+                        height="auto"
+                        top="15px"
+                        margin-bottom= "0px"
+                        left="150px"
+                      >
+                        <CloseButton
+                          background="#FF7425"
+                          onClick={handleCloseAndOpen}
+                          right="20px"
+                        >
+                          <Typo size="15px" fontWeight="700" color="#fff">
+                            확인
+                          </Typo>
+                        </CloseButton>
+                        <CloseButton onClick={handleCloseFirstModal}>
+                          <Typo size="15px" fontWeight="700" color="#fff">
+                            닫기
+                          </Typo>
+                        </CloseButton>
+                      </Box>
+                    </ModalContent>
+                  </Modal>
+                )}
+                {showSecondModal && (
+                  <Modal
+                    isOpen={showSecondModal}
+                    onClose={handleCloseSecondModal}
+                  >
+                    <ModalContent>
+                      <Typo
+                        size="20px"
+                        fontWeight="700"
+                        color="#333"
+                        justifyContent="center"
+                        top="90px"
+                        bottom="30px"
+                      >
+                        기부가 완료되었습니다.
+                      </Typo>
+                      <Typo size="16px" color="#647488" bottom="10px">
+                        계정: Account1
+                      </Typo>
+                      <Typo size="16px" color="#647488" bottom="20px">
+                        보유 코인: 10,000 ETH
+                      </Typo>
+                      <Box
+                        width="400px"
+                        height="auto"
+                        top="15px"
+                        flexDirection="row"
+                        justifyContent="center"
+                        gap="20px"
+                      >
+                        <CloseButton
+                          background="#FF7425"
+                          onClick={handleCloseSecondModal}
+                          left="140px"
+                        >
+                          <Typo size="15px" fontWeight="700" color="#fff" >
+                            확인
+                          </Typo>
+                        </CloseButton>
+                      </Box>
+                    </ModalContent>
+                  </Modal>
+                )}
               <ShareButton bottom="10px">
                 <Typo size="15px" fontWight="700" color="#000" top="5px">
                   공유하기
