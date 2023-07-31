@@ -115,7 +115,7 @@ export const contents = [
           ],
   },
   {
-    title: "여름나기가 두려운 결손아이들",
+    title: "여름나기가 두려운 어르신들",
     organization: "사회지원재단",
     image: Progress2,
     progress: 75,
@@ -167,7 +167,7 @@ export const contents = [
             },
           ], },
   {
-    title: "치료가 필요한 나린이를 도와주세요",
+    title: "치료가 필요한 정우를 도와주세요",
     organization: "굿네이버스",
     image: Progress3,
     progress: 25,
@@ -275,7 +275,7 @@ export const contents = [
           ], },
 
           {
-            title: "심장병으로 생사의 길에 선 유기견",
+            title: "심장병으로 생사의 길에 선 코코",
             organization: "서울동물권리연합",
             manager:"김동국",
             image: Progress5,

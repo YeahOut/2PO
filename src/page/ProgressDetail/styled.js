@@ -10,7 +10,8 @@ const fontWeight = css`
   font-weight: ${(props) => props.fontWeight || "600"};
 `;
 
-export const Root = styled.div``;
+export const Root = styled.div`
+`;
 
 export const BackContainer = styled.div`
   width: 100%;
@@ -187,7 +188,7 @@ export const VoteList = styled.div`
   padding-left: 10px;
 `;
 
-export const Button = styled.button`
+export const Button2 = styled.button`
   display: flex;
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};

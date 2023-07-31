@@ -19,11 +19,13 @@ import {
   Bar,
   VoteList,
   ListBox,
-  Button,
+  Button2,
   Comment,
   CommentBox,
   Box
 } from "./styled";
+
+import { Header, Button, Popup, Grid } from 'semantic-ui-react'
 
 export const ProgressDetail = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -70,6 +72,35 @@ export const ProgressDetail = () => {
     setCommentValue("");
   };
 
+//공유하기 팝업
+  
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const handleShareButtonClick = () => {
+    setPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+  };
+
+  const shareToKakaoTalk = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
+  const shareToInstagram = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+  const shareToTwitter = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
   const { id } = useParams();
   const index = parseInt(id);
   const selectedContent = contents[index];
@@ -103,7 +134,7 @@ export const ProgressDetail = () => {
                   코인으로 기부하기
                   </Typo>
                 </OrangeButton>
-                <ShareButton top="32px">
+                <ShareButton top="32px" oncluck>
                   <Typo size="15px" fontWeight="700" color="#000" top="5px">
                   공유하기
                   </Typo>
@@ -125,11 +156,11 @@ export const ProgressDetail = () => {
                   </Typo>
                 </Box>
               </Box>
-              <Button top="35px" width="120px" height="40px">
+              <Button2 top="35px" width="120px" height="40px">
                 <Typo color="#333" size="15px" fontWeight="700" top="7px">
                   연락하기
                 </Typo>
-              </Button>
+              </Button2>
             </Box>
             <TextContainer width="800px" height="auto">
               <Typo color="#333" size="22px" fontWeight="600" top="20px">
@@ -250,19 +281,18 @@ export const ProgressDetail = () => {
                   </VoteList>
                 ))}
               </ListBox>
-              <Link to={`/progress`}>
-                <Button>
+              <Link to={`/rank`}>
+                <Button2>
                   <img src="/star.svg" />
                   <Typo color="#333" size="15px" fontWeight="700" top="5px">
                   기부순위 보러가기
                   </Typo>
-                </Button>
+                </Button2>
               </Link>
             </VoteContainer>
           </GridItem>
         </GridContainer>
       </BackContainer>
-    </Root>
+      </Root>
       );
     };
-    
