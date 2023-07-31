@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
   }
 
-  a, ul, li, h1, h2 {
+  a, ul, li, h1, h2, h3 {
     all: unset;
     margin: 0;
     padding: 0;
