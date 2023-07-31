@@ -10,6 +10,7 @@ import {
   GridContainer,
   GridItem,
   Image,
+  Image2,
   ImageContainer,
   BackContainer,
   VoteContainer,
@@ -243,16 +244,15 @@ export const ProgressDetail = () => {
                         fontWeight="700"
                         color="#333"
                         justifyContent="center"
-                        top="90px"
+                        top="45px"
                         bottom="30px"
                       >
-                        기부가 완료되었습니다.
+                        후원해주셔서 감사합니다.
                       </Typo>
-                      <Typo size="16px" color="#647488" bottom="10px">
-                        계정: Account1
-                      </Typo>
-                      <Typo size="16px" color="#647488" bottom="20px">
-                        보유 코인: 10,000 ETH
+                      <Image2 src="/donate.png" />
+                      <Typo size="16px" color="#333" bottom="20px" top="30px">
+                        모든 거래는 블록체인 상에서
+                        안전하게 거래되고 투명하게 공개됩니다.
                       </Typo>
                       <Box
                         width="400px"

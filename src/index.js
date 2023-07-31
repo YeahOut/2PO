@@ -17,9 +17,9 @@ import {
   Inquiry,
   Throw,
   NFT,
-  Intro
+  Intro,
+  Wallet
 } from "./page";
-import { Wallet } from "ethers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
