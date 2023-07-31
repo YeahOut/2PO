@@ -15,6 +15,7 @@ import {
   Transaction,
   Token,
   Inquiry,
+  Nft,
   Throw,
   Wallet
 } from "./page";
@@ -37,7 +38,8 @@ root.render(
           <Route path="/token" element={<Token />} />
           <Route path="/throw" element={<Throw />} />
           <Route path="/transaction" element={<Transaction />} />
-          <Route path="/inquiry" element={<Inquiry />} />
+          <Route path="/inquiry" element={<Inquiry />}/>
+          <Route path="/donate" element={<Nft />}/>
           <Route path="/wallet" element={<Wallet />} />
         </Route>
       </Routes>

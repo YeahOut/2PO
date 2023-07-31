@@ -44,14 +44,11 @@ export const Typo = styled.div`
   font-size: ${(props) => props.size || "15px"};
   font-style: normal;
   ${fontWeight}
-  line-height: 129.73%
+  line-height: 100%
   letter-spacing: -0.8px;
   ${customMargin};
   justify-content: left;
 `;
-
-
-
 
 export const GridContainer = styled.div`
   width: 100%;
@@ -121,7 +118,7 @@ export const TextContainer = styled.div`
         height: auto;
         flex-direction: column;
         flex-shrink: 0;
-        margin-top: 40px;
+        margin-top: 20px;
        `;
 
 export const ButtonContainer = styled.div`
@@ -308,3 +305,90 @@ export const Bar = styled.div`
   background: #ff7425;
 `;
 
+//새로추가
+export const OrangeButton = styled.button`
+  display: flex;
+  width: ${(props) => props.width || "315.7px"};
+  height: ${(props) => props.height || "48px"};
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #ff7425;
+  &:hover {
+    background: #d55711;
+  }
+  ${customMargin};
+`;
+export const Box = styled.div`
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection || "row"};
+  width: ${(props) => props.width || "0"};
+  height: ${(props) => props.height || "0"};
+  background: ${(props) => props.background || "none"};
+  border-radius: ${(props) => props.borderRadius || "none"};
+  flex-shrink: 0;
+  ${customMargin}
+`;
+
+export const ListBox = styled.div`
+  display: flex;
+  width: 315.7px;
+  height: 325px;
+  flex-direction: column;
+  border-top: solid 4px #e6f6ef;
+  border-bottom: solid 4px #e6f6ef;
+  padding-top: 10px;
+  overflow: auto; /* 스크롤이 생기도록 설정합니다. */
+`;
+
+export const VoteList = styled.div`
+  display: flex;
+  width: 290px;
+  height: 150px;
+  padding-left: 10px;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  width: ${(props) => props.width || "auto"};
+  height: ${(props) => props.height || "auto"};
+  padding: 7px 25.48px 9px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  &:hover {
+    background: #f1f1f1;
+  }
+  ${customMargin};
+`;
+
+export const Comment = styled.div`
+  display: flex;
+  width: 650px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #d9d9d9;
+  gap: 40px;
+  align-item: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-top: 10px;
+`;
+
+export const CommentBox = styled.div`
+         display: flex;
+         flex-direction: column;
+         width: 650px;
+         height: 300px;
+         flex-shrink: 0;
+         background: #fff;
+         margin-bottom: 20px;
+         overflow: auto; /* 스크롤이 생기도록 설정합니다. */
+         gap: 20px;
+         margin-bottom:0px;
+       `;
