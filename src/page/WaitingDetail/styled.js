@@ -2,8 +2,9 @@ import styled, { css } from "styled-components";
 
 const customMargin = css`
   margin: ${(props) =>
-    `${props.top || "0px"} ${props.right || "0px"} ${props.bottom ||
-      "0px"} ${props.left || "0px"}`};
+    `${props.top || "0px"} ${props.right || "0px"} ${props.bottom || "0px"} ${
+      props.left || "0px"
+    }`};
 `;
 
 const fontWeight = css`
@@ -31,7 +32,7 @@ export const TopBox = styled.div`
   flex-shrink: 0;
 `;
 
-export const Typo = styled.div`
+export const Typo = styled.span`
   display: flex;
   color: ${(props) => props.color || "black"};
   font-family: Inter;
@@ -40,8 +41,8 @@ export const Typo = styled.div`
   ${fontWeight}
   line-height: 129.73%;
   letter-spacing: -0.8px;
-  margin-left: 90px;
   ${customMargin}
+  justify-content: ${(props) => props.justifyContent || "none"};
 `;
 
 export const GridContainer = styled.div`
@@ -107,8 +108,10 @@ export const Box = styled.div`
   background: ${(props) => props.background || "none"};
   border-radius: ${(props) => props.borderRadius || "none"};
   flex-shrink: 0;
+  justify-content: ${(props) => props.justifyContent || "none"};
   ${customMargin}
   margin-left: 7px;
+  gap: ${(props) => props.gap || "0px"};
 `;
 
 export const ButtonContainer = styled.div`
@@ -117,7 +120,7 @@ export const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center;
-  gap:90px;
+  gap: 90px;
   margin-bottom: 32px;
   justify-content: center; /* 가운데 정렬을 추가 */
 `;
@@ -221,15 +224,47 @@ export const Comment = styled.div`
 `;
 
 export const CommentBox = styled.div`
-         display: flex;
-         flex-direction: column;
-         width: 800px;
-         height: 350px;
-         flex-shrink: 0;
-         background: #fff;
-         margin-top: 20px;
-         margin-bottom: 20px;
-         overflow: auto; /* 스크롤이 생기도록 설정합니다. */
-         gap: 20px;
-         padding-top: 10px;
-       `;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 350px;
+  flex-shrink: 0;
+  background: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: auto; /* 스크롤이 생기도록 설정합니다. */
+  gap: 20px;
+  padding-top: 10px;
+`;
+
+export const CloseButton = styled.button`
+  display: flex;
+  width: 120px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: ${(props) => props.background || "#6B7280"};
+  align-items: center;
+  justify-content: center;
+  top: "10px";
+  ${customMargin}
+`;
+
+export const ModalContent = styled.div`
+display:flex;
+flex-direction: column;
+  width: 450px;
+  height: 250px;
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  align-items: center;
+`;
+
+export const Input = styled.input`
+  width: 400px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e5e7eb;
+`;

@@ -7,7 +7,10 @@ import Waiting5 from "../assets/WaitingImage/Waiting5.jpeg";
 import Waiting8 from "../assets/WaitingImage/Waiting8.jpg";
 import Waiting9 from "../assets/WaitingImage/Waiting9.png";
 
-export const WaitingImage = [{ id: "0", name: "Waiting1", src: Waiting1 }];
+export const user={
+  id: "Account1",
+  totalTokens: "100,000"
+}
 
 export const contents = [
   {

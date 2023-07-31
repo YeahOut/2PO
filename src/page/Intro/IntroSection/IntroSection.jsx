@@ -1,7 +1,6 @@
 import React from "react";
 import {TextBox, Typo, BackContainer, Image, ImageBox, TypoBox} from "./styled";
 
-
 export const IntroSection = () => {
   return (
     <BackContainer>
