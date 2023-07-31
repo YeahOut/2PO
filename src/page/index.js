@@ -12,3 +12,4 @@ export { Inquiry } from "./Inquiry";
 export { Nft } from "./Nft";
 export { Throw } from "./Throw";
 export { Wallet } from "./Wallet";
+export { FAQ } from "./FAQ";
