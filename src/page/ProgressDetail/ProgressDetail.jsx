@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { contents, List} from "../../utils/ProgressDetail";
+import { contents, List } from "../../utils/ProgressDetail";
 import {
   Root,
   TopBox,
   Typo,
   GridContainer,
   GridItem,
-  GridItem2,
-  BigImage,
+  Image,
   ImageContainer,
   BackContainer,
-  Line,
-  Blank,
-  More,
   VoteContainer,
   TextContainer,
-  VoteCoinButton,
+  OrangeButton,
   ShareButton,
   ButtonContainer,
-  ButtonContainer2,
-  CommentContainer,
-  ManagerContainer,
-  VoteContainer2,
-  CommentContainer2,
+  Box,
   FullBar,
   Bar,
-  OrangeButton,
-  Box,
   VoteList,
   ListBox,
   Button,
@@ -35,9 +25,7 @@ import {
   CommentBox,
 } from "./styled";
 
-
 export const ProgressDetail = () => {
-{/*
   const [scrollY, setScrollY] = useState(0);
   const [voteContainerTop, setVoteContainerTop] = useState(0);
   const voteContainerHeight = 670; // VoteContainer의 높이 설정 (고정값 또는 동적으로 계산된 값)
@@ -66,9 +54,7 @@ export const ProgressDetail = () => {
     setVoteContainerTop(limitedVoteContainerTop);
   }, [scrollY]);
 
-*/}
-
-  const [commentValue, setCommentValue] = useState([]);
+    const [commentValue, setCommentValue] = useState("");
 
   // 댓글 입력 값이 변경될 때 호출되는 함수
   const handleCommentChange = (e) => {
@@ -84,9 +70,9 @@ export const ProgressDetail = () => {
     setCommentValue("");
   };
 
-    const { id } = useParams();
-    const index = parseInt(id);
-    const selectedContent = contents[index];
+  const { id } = useParams();
+  const index = parseInt(id);
+  const selectedContent = contents[index];
 
   return (
     <Root>
@@ -96,59 +82,36 @@ export const ProgressDetail = () => {
             {selectedContent.title}
           </Typo>
           <Typo size="15px" left="100px" top="20px">
-            후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
+          후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
             <img src="/tag.svg" alt="테그" />
             {selectedContent.organization}
           </Typo>
         </TopBox>
+
         <GridContainer>
           <GridItem>
             <ImageContainer>
-              <BigImage src={selectedContent.image} />
+              <Image src={selectedContent.image} />
             </ImageContainer>
-            <TextContainer>
-              <Line />
-              <Typo size="16px" fontWeight="400" color="#333" top="0px">
+            <TextContainer width="800px" height="auto">
+              <Typo size="16px" fontWeight="400" color="#333" top="40px">
                 {selectedContent.text}
               </Typo>
-              <Blank />
-              <More />
-            </TextContainer>
-            <ButtonContainer>
-              <VoteCoinButton top="32px" >
-                <Typo size="15px" fontWight="700" color="#000">
-                  코인으로 후원하기
-                </Typo>
-              </VoteCoinButton>
-              <ShareButton top="32px" >
-                <Typo size="15px" fontWight="700" color="#000">
+              <ButtonContainer>
+                <OrangeButton top="32px">
+                  <Typo size="15px" fontWeight="700" color="#fff" top="5px">
+                  코인으로 기부하기
+                  </Typo>
+                </OrangeButton>
+                <ShareButton top="32px">
+                  <Typo size="15px" fontWeight="700" color="#000" top="5px">
                   공유하기
-                </Typo>
-              </ShareButton>
-            </ButtonContainer>
-            <Line />
-{/*
-            <ManagerContainer>
-              <Item.Group>
-                <Typo size="25px" left="0px">
-                  후원 담당자
-                </Typo>
-                <Blank />
-                <Item>
-                  <Item.Image size="tiny" src="/manager.svg" alt="매니저" />
-                  <Item.Content>
-                    <Item.Header as="a">김동국</Item.Header>
-                    <Item.Meta> {selectedContent.organization} 대표</Item.Meta>
-                    <Item.Extra>연락하기</Item.Extra>
-                  </Item.Content>
-                </Item>
-              </Item.Group>
-            </ManagerContainer>
-            <Line />
-  */}
-
-              <Box width="800px" height="auto" flexDirection="column">
-              <Typo size="23px" fontWeight="600" top="25px" bottom="20px">
+                  </Typo>
+                </ShareButton>
+              </ButtonContainer>
+            </TextContainer>
+            <Box width="800px" height="auto" flexDirection="column">
+              <Typo size="23px" fontWeight="600" top="35px" bottom="35px">
                 후원 담당자
               </Typo>
               <Box width="800px" height="auto">
@@ -162,32 +125,30 @@ export const ProgressDetail = () => {
                   </Typo>
                 </Box>
               </Box>
-              <Button top="20px" width="120px" height="40px">
-                <Typo color="#333" size="15px" fontWeight="700">
+              <Button top="35px" width="120px" height="40px">
+                <Typo color="#333" size="15px" fontWeight="700" top="7px">
                   연락하기
                 </Typo>
               </Button>
             </Box>
-            <Line />
-
-            <TextContainer width="600px" height="auto">
-              <Typo color="#333" size="22px" fontWeight="600" top="0px">
+            <TextContainer width="800px" height="auto">
+              <Typo color="#333" size="22px" fontWeight="600" top="20px">
                 응원 댓글
               </Typo>
-              <Typo color="#767676" size="14px" fontWeight="400" top="0px">
+              <Typo color="#767676" size="14px" fontWeight="400" top="20px">
                 따스한 한 마디로 세상을 빛낼 수 있습니다.
               </Typo>
-              <Box                    
-height="auto" width="300px" bottom="20px" flexDirection="column">
+              <Box height="auto" bottom="20px" flexDirection="column">
                 <Comment>
                   <Box
-                    width="500px"
+                    width="650px"
                     height="29px"
                     background="#fff"
+                    left="25px"
                     alignItem="center"
                     top="3px"
                   >
-                    <Typo size="14px" fontWeight="300" top="5px" left="5px">
+                    <Typo size="14px" fontWeight="300" top="2px" left="5px">
                       <input
                         type="text"
                         value={commentValue} // 댓글 입력 값
@@ -199,16 +160,14 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                   <OrangeButton
                     width="66px"
                     height="29px"
-                    left="-10px"
-                    top="4px"
                     onClick={handleCommentSubmit}
+                    top="3px"
                   >
-                    <Typo size="11px" color="#fff" fontWeight="600">
+                    <Typo size="13px" color="#fff" fontWeight="700" top="3px">
                       등록
                     </Typo>
                   </OrangeButton>
                 </Comment>
-
                 <CommentBox>
                   {selectedContent.comments.map((comment, index) => (
                     <VoteList key={index}>
@@ -217,6 +176,7 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                         height="40px"
                         borderRadius="20px"
                         background="#F1F1F1"
+                        top = "-2px"
                       >
                         <img src="/vote.svg" />
                       </Box>
@@ -225,7 +185,7 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                           {comment.comment}
                         </Typo>
                         <Typo left="10px" fontWeight="400" size="14px">
-                          {comment.userId} •
+                          {comment.userId} &nbsp;&nbsp;•
                           <Typo left="10px" fontWeight="400" size="14px">
                             {comment.date}
                           </Typo>
@@ -236,45 +196,35 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                 </CommentBox>
               </Box>
             </TextContainer>
-
-              <Line />
-              <Blank />
-              <Typo size="15px" left="0px" top="0px">
-                후원 기간 : 2023-07-23 ~ 2023-08-23 •{" "}
-                <img src="/tag.svg" alt="테그" />
-                {selectedContent.organization}
-              </Typo>
-              <Line />
           </GridItem>
 
-          <GridItem2>
-            <VoteContainer>
-              <Typo size="30px" top="10px">
-              {selectedContent.progress}%
-              </Typo>
+          <GridItem id="grid-item">
+            <VoteContainer style={{ top: `${voteContainerTop}px` }}>
+
+              <Box width="313px" height="24px" top="20px">
+ 
+                <Typo size="20px" fontWight="700" >
+                  {selectedContent.totalDonation}원 / {selectedContent.targetDonation}원
+                </Typo>
+              </Box>
               <FullBar>
-                <Bar width={selectedContent.barWidth} />
+              <Bar width={selectedContent.barWidth} />
               </FullBar>
-              <Typo size="20px">
-              {selectedContent.totalDonation}원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목표: {selectedContent.targetDonation}원
-              </Typo>
-              <Typo size="12px" color="gray" top="5px">
-                30명 기부
-              </Typo>
-              <Blank />
-              <VoteContainer2>
-                <VoteCoinButton top="15px" >
-                  <Typo size="15px" fontWight="700" color="#000">
-                    코인으로 후원하기
-                  </Typo>
-                </VoteCoinButton>
-                <ShareButton top="15px">
-                  <Typo size="15px" fontWight="700" color="#000">
-                    공유하기
-                  </Typo>
-                </ShareButton>
-              </VoteContainer2>
-              <Blank />
+              <Box width="313px" height="24px">
+                <Typo size="15px" fontWight="700" color="#707070">
+                  30명 기부
+                </Typo>
+              </Box>
+              <OrangeButton>
+                <Typo size="15px" fontWight="700" color="#fff" top="5px">
+                코인으로 기부하기
+                </Typo>
+              </OrangeButton>
+              <ShareButton bottom="10px">
+                <Typo size="15px" fontWight="700" color="#000" top="5px">
+                  공유하기
+                </Typo>
+              </ShareButton>
               <ListBox>
                 {List.map((voted, index) => (
                   <VoteList key={index}>
@@ -290,8 +240,8 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                       <Typo left="10px" fontWeight="400" size="15px">
                         {voted.userId}
                       </Typo>
-                      <Typo left="10px" fontWeight="700" size="14px" margin-bottom="10px">
-                        {voted.howMany}개&nbsp;&nbsp;&nbsp;&nbsp;•
+                      <Typo left="10px" fontWeight="700" size="14px">
+                        {voted.howMany}원&nbsp;&nbsp;&nbsp;&nbsp;•
                         <Typo left="10px" fontWeight="400" size="14px">
                           {voted.date}
                         </Typo>
@@ -300,17 +250,19 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                   </VoteList>
                 ))}
               </ListBox>
-               <ButtonContainer2>
-                <Link to="/rank">
-                  <Button basic color="black" >
-                    ☆기부순위 보러가기
-                  </Button>
-                </Link>
-              </ButtonContainer2>
+              <Link to={`/progress`}>
+                <Button>
+                  <img src="/star.svg" />
+                  <Typo color="#333" size="15px" fontWeight="700" top="5px">
+                  기부순위 보러가기
+                  </Typo>
+                </Button>
+              </Link>
             </VoteContainer>
-          </GridItem2>
+          </GridItem>
         </GridContainer>
       </BackContainer>
     </Root>
-  );
-};
+      );
+    };
+    
