@@ -7,7 +7,7 @@ import {
 
 import { Title } from "../../components";
 
-export const Nft = () => {
+export const NFT = () => {
   return (
     <Root>
       <Title
