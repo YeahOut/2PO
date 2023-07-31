@@ -134,7 +134,7 @@ export const ProgressDetail = () => {
                   코인으로 기부하기
                   </Typo>
                 </OrangeButton>
-                <ShareButton top="32px">
+                <ShareButton top="32px" oncluck>
                   <Typo size="15px" fontWeight="700" color="#000" top="5px">
                   공유하기
                   </Typo>
