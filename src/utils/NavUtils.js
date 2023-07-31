@@ -2,7 +2,7 @@ const navItems = [
   {
     text: "기부런 소개",
     details: [
-      { name: "소개", src: "intro" },
+      { name: "소개", src: "Intro" },
       { name: "기부 비하인드", src: "behind" },
     ],
   },
