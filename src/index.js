@@ -15,6 +15,7 @@ import {
   Transaction,
   Token,
   Inquiry,
+  Wallet
 } from "./page";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -35,6 +36,7 @@ root.render(
           <Route path="/token" element={<Token />} />
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/inquiry" element={<Inquiry />} />
+          <Route path="/wallet" element={<Wallet />} />
         </Route>
       </Routes>
     </BrowserRouter>
