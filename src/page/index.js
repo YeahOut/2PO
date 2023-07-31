@@ -9,3 +9,4 @@ export { WaitingDetail } from "./WaitingDetail";
 export { Transaction } from "./Transaction";
 export { Token } from "./Token";
 export { Inquiry } from "./Inquiry";
+export {Intro} from "./Intro";
