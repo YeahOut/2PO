@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import phoneImg from "../../../../assets/image/main_phone.png";
+import phoneImg from "../../../../assets/image/main_phone1.png";
 
 const customMargin = css`
   margin: ${(props) =>
