@@ -4,10 +4,11 @@ export const UpIcon = styled.img`
   position: absolute;
   top: 66px;
   left: 0px;
-  width: 1280px;
-  height: 1512px;
+  width: 100%;
+  height: 880px;
   object-fit: cover;
 `;
+
 export const TextIcon = styled.img`
   position: absolute;
   top: 975px;
@@ -16,6 +17,20 @@ export const TextIcon = styled.img`
   height: 43px;
   object-fit: cover;
 `;
+
+export const V = styled.img`
+  position: absolute;
+  top: 1500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: ${(props) => (props.screenWidth <= 1280 ? "100%" : "3000px")};
+  height: ${(props) => (props.screenWidth <= 1280 ? "auto" : "2500px")};
+  max-width: 3000px;
+  max-height: 2500px;
+  object-fit: cover;
+  opacity: 0.7;
+`;
+
 export const Div1 = styled.div`
   position: relative;
   border-radius: 111px;
@@ -37,6 +52,7 @@ export const Menu = styled.div`
   justify-content: flex-start;
   gap: 10px;
 `;
+
 export const Icon1 = styled.img`
   position: absolute;
   top: 1319px;
@@ -45,19 +61,19 @@ export const Icon1 = styled.img`
   height: 1792px;
   object-fit: cover;
 `;
+
 export const DivRoot = styled.div`
-position: relative;
-background-color: #fff;
-width: 100%;
-min-height: 450vh; /* Set minimum height to cover the entire viewport */
-max-width: 1280px; /* Add max-width to keep the content centered when the screen size is reduced */
-margin: 0 auto; /* Use auto margin to center the container horizontally */
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-  
+  position: relative;
+  width: 100%;
+  min-height: 450vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
+
 export const Httpschromegooglecomwebs = styled.a`
   position: absolute;
   top: 500px;
@@ -71,9 +87,10 @@ export const Httpschromegooglecomwebs = styled.a`
   display: inline-block;
   width: 819px;
   height: 300px;
-  word-break: break-all; /* 줄바꿈 강제 적용 */
+  word-break: break-all;
   z-index: 1;
 `;
+
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -81,5 +98,5 @@ export const ContentContainer = styled.div`
 `;
 
 export const Root = styled.div`
-width:100%;
+  width: 100%;
 `;
