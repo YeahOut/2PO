@@ -50,10 +50,10 @@ export const WaitingDetail = () => {
     setShowSecondModal(false);
   };
 
-    const handleCloseAndOpen = () => {
-      setShowFirstModal(false);
-      setShowSecondModal(true); // 두 번째 모달을 엽니다.
-    };
+  const handleCloseAndOpen = () => {
+    setShowFirstModal(false);
+    setShowSecondModal(true); // 두 번째 모달을 엽니다.
+  };
 
   const [scrollY, setScrollY] = useState(0);
   const [voteContainerTop, setVoteContainerTop] = useState(0);
@@ -204,12 +204,12 @@ export const WaitingDetail = () => {
                       >
                         투표가 완료되었습니다.
                       </Typo>
-                        <Typo size="16px" color="#647488" bottom="10px">
-                          계정: Account1
-                        </Typo>
-                        <Typo size="16px" color="#647488" bottom="20px">
-                          보유 토큰: 10,000개 (2PO)
-                        </Typo>
+                      <Typo size="16px" color="#647488" bottom="10px">
+                        계정: Account1
+                      </Typo>
+                      <Typo size="16px" color="#647488" bottom="20px">
+                        보유 토큰: 10,000개 (2PO)
+                      </Typo>
                       <Box
                         width="400px"
                         height="auto"
@@ -387,72 +387,57 @@ export const WaitingDetail = () => {
                     >
                       <CloseButton
                         background="#FF7425"
-                        onClick={handleOpenSecondModal}
+                        onClick={handleCloseAndOpen}
                       >
                         <Typo size="15px" fontWeight="700" color="#fff">
                           확인
                         </Typo>
-                        {showSecondModal && (
-                          <Modal
-                            isOpen={showSecondModal}
-                            onClose={handleCloseSecondModal}
-                          >
-                            <ModalContent>
-                              <Typo
-                                size="20px"
-                                fontWeight="700"
-                                color="#333"
-                                justifyContent="center"
-                                top="60px"
-                                bottom="30px"
-                              >
-                                투표가 완료되었습니다.
-                              </Typo>
-                              <Box width="400px" height="auto" gap="20px">
-                                <Typo size="16px" color="#647488" bottom="10px">
-                                  계정: Account1
-                                </Typo>
-                                <Typo size="16px" color="#647488" bottom="10px">
-                                  보유 토큰: 10,000개 (2PO)
-                                </Typo>
-                              </Box>
-                              <Box
-                                width="400px"
-                                height="auto"
-                                top="15px"
-                                flexDirection="row"
-                                justifyContent="center"
-                                gap="20px"
-                              >
-                                <CloseButton
-                                  background="#FF7425"
-                                  onClick={handleCloseSecondModal}
-                                >
-                                  <Typo
-                                    size="15px"
-                                    fontWeight="700"
-                                    color="#fff"
-                                  >
-                                    확인
-                                  </Typo>
-                                </CloseButton>
-                                <CloseButton onClick={handleCloseSecondModal}>
-                                  <Typo
-                                    size="15px"
-                                    fontWeight="700"
-                                    color="#fff"
-                                  >
-                                    닫기
-                                  </Typo>
-                                </CloseButton>
-                              </Box>
-                            </ModalContent>
-                          </Modal>
-                        )}
                       </CloseButton>
                       <CloseButton onClick={handleCloseFirstModal}>
                         <Typo size="15px" fontWeight="700" color="#fff">
                           닫기
+                        </Typo>
+                      </CloseButton>
+                    </Box>
+                  </ModalContent>
+                </Modal>
+              )}
+              {showSecondModal && (
+                <Modal
+                  isOpen={showSecondModal}
+                  onClose={handleCloseSecondModal}
+                >
+                  <ModalContent>
+                    <Typo
+                      size="20px"
+                      fontWeight="700"
+                      color="#333"
+                      justifyContent="center"
+                      top="60px"
+                      bottom="30px"
+                    >
+                      투표가 완료되었습니다.
+                    </Typo>
+                    <Typo size="16px" color="#647488" bottom="10px">
+                      계정: Account1
+                    </Typo>
+                    <Typo size="16px" color="#647488" bottom="20px">
+                      보유 토큰: 10,000개 (2PO)
+                    </Typo>
+                    <Box
+                      width="400px"
+                      height="auto"
+                      top="15px"
+                      flexDirection="row"
+                      justifyContent="center"
+                      gap="20px"
+                    >
+                      <CloseButton
+                        background="#FF7425"
+                        onClick={handleCloseSecondModal}
+                      >
+                        <Typo size="15px" fontWeight="700" color="#fff">
+                          확인
                         </Typo>
                       </CloseButton>
                     </Box>
