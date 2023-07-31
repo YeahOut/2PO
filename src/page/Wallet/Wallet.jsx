@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UpIcon,
   TextIcon,
@@ -16,7 +16,9 @@ import Keplr1 from "./components/Keplr1";
 import Binance from "./components/Binance";
 import { Title } from "../../components";
 
+
 export const Wallet = () => {
+
   return (
     <Root>
       <Title
@@ -37,12 +39,13 @@ export const Wallet = () => {
       >
         https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn
         </Httpschromegooglecomwebs>
+        
           <Binance/>
           <Metamask />
           <Phantom1 />
           <Keplr1 />
         </Menu>
-        <Icon1 alt="" src="/Wallet3.png" />
+        <Icon1 alt="" src="/Wallet-m.png" />
       </ContentContainer>
     </DivRoot>
     </Root>
