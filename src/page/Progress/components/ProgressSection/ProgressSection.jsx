@@ -89,7 +89,7 @@ export const ProgressSection = () => {
                 <Contents key={index}>
                   <Image src={content.image} />
                   <Shadow align="column">
-                    <TypoWhite size="25px">{content.title}</TypoWhite>
+                    <TypoWhite size="24px">{content.title}</TypoWhite>
                     <TypoWhite size="20px">{content.organization}</TypoWhite>
                     <DonateButton>
                       <TypoWhite size="18px">기부하기</TypoWhite>
