@@ -15,11 +15,6 @@ import {
   OrangeButton,
   ShareButton,
   ButtonContainer,
-  ButtonContainer2,
-  CommentContainer,
-  ManagerContainer,
-  VoteContainer2,
-  CommentContainer2,
   FullBar,
   Bar,
   VoteList,
@@ -27,6 +22,7 @@ import {
   Button,
   Comment,
   CommentBox,
+  Box
 } from "./styled";
 
 export const ProgressDetail = () => {
@@ -113,7 +109,7 @@ export const ProgressDetail = () => {
                   </Typo>
                 </ShareButton>
               </ButtonContainer>
-            </TextContainer>
+           < /TextContainer>
             <Box width="800px" height="auto" flexDirection="column">
               <Typo size="23px" fontWeight="600" top="35px" bottom="35px">
                 후원 담당자
