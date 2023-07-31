@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { contents } from "../../utils/ProgressDetail";
+import { contents, List} from "../../utils/ProgressDetail";
 import {
   Root,
   TopBox,
@@ -26,17 +26,37 @@ import {
   CommentContainer2,
   FullBar,
   Bar,
+  OrangeButton,
+  Box,
+  VoteList,
+  ListBox,
+  Button,
+  Comment,
+  CommentBox,
 } from "./styled";
 
 import {
-  Button,
-  Comment,
-  Form,
-  Item,
+  Item
 } from "semantic-ui-react";
 
 
 export const ProgressDetail = () => {
+  const [commentValue, setCommentValue] = useState([]);
+
+  // 댓글 입력 값이 변경될 때 호출되는 함수
+  const handleCommentChange = (e) => {
+    // 댓글 입력 값을 상태(state)에 저장
+    setCommentValue(e.target.value);
+  };
+
+  // 댓글 등록 버튼을 클릭했을 때 호출되는 함수
+  const handleCommentSubmit = () => {
+    // 댓글 등록 처리 로직 추가
+    console.log("댓글 등록:", commentValue);
+    // 댓글 입력 값을 초기화
+    setCommentValue("");
+  };
+
     const { id } = useParams();
     const index = parseInt(id);
     const selectedContent = contents[index];
@@ -80,6 +100,7 @@ export const ProgressDetail = () => {
               </VoteAcoountButton>
             </ButtonContainer>
             <Line />
+{/*
             <ManagerContainer>
               <Item.Group>
                 <Typo size="25px" left="0px">
@@ -97,79 +118,99 @@ export const ProgressDetail = () => {
               </Item.Group>
             </ManagerContainer>
             <Line />
-            <CommentContainer>
-              <Comment.Group>
-                <Typo size="25px" left="0px">
-                  응원댓글
+  */}
+
+
+              <Box width="800px" height="auto" flexDirection="column">
+              <Typo size="23px" fontWeight="600" top="25px" bottom="20px">
+                후원 담당자
+              </Typo>
+              <Box width="800px" height="auto">
+                <img src="/profile.svg" />
+                <Box width="auto" height="auto" flexDirection="column">
+                  <Typo left="10px" fontWeight="700" size="15px">
+                    {selectedContent.manager}
+                  </Typo>
+                  <Typo left="10px" fontWeight="400" size="13px">
+                    {selectedContent.organization}
+                  </Typo>
+                </Box>
+              </Box>
+              <Button top="20px" width="120px" height="40px">
+                <Typo color="#333" size="15px" fontWeight="700">
+                  연락하기
                 </Typo>
-                <Blank />
-                <Typo size="13px" left="0px" color="gray">
-                  당신의 따스한 한 마디로 세상을 빛낼 수 있습니다.
-                </Typo>
+              </Button>
+            </Box>
+            <Line />
+
+            <TextContainer width="600px" height="auto">
+              <Typo color="#333" size="22px" fontWeight="600" top="0px">
+                응원 댓글
+              </Typo>
+              <Typo color="#767676" size="14px" fontWeight="400" top="0px">
+                따스한 한 마디로 세상을 빛낼 수 있습니다.
+              </Typo>
+              <Box                    
+height="auto" width="300px" bottom="20px" flexDirection="column">
                 <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      밥먹는 제이지{" "}
-                      <Comment.Metadata>
-                        <div>3시간 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
-                    <Comment.Text>
-                    {selectedContent.comment1}
-                    </Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
+                  <Box
+                    width="500px"
+                    height="29px"
+                    background="#fff"
+                    alignItem="center"
+                    top="3px"
+                  >
+                    <Typo size="14px" fontWeight="300" top="5px" left="5px">
+                      <input
+                        type="text"
+                        value={commentValue} // 댓글 입력 값
+                        onChange={handleCommentChange} // 댓글 입력 값 변경 이벤트 처리 함수
+                        placeholder="응원댓글을 달아주세요."
+                      />
+                    </Typo>
+                  </Box>
+                  <OrangeButton
+                    width="66px"
+                    height="29px"
+                    left="-10px"
+                    top="4px"
+                    onClick={handleCommentSubmit}
+                  >
+                    <Typo size="11px" color="#fff" fontWeight="600">
+                      등록
+                    </Typo>
+                  </OrangeButton>
                 </Comment>
 
-                <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      유준영
-                      <Comment.Metadata>
-                        <div>12시간 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
+                <CommentBox>
+                  {selectedContent.comments.map((comment, index) => (
+                    <VoteList key={index}>
+                      <Box
+                        width="40px"
+                        height="40px"
+                        borderRadius="20px"
+                        background="#F1F1F1"
+                      >
+                        <img src="/vote.svg" />
+                      </Box>
+                      <Box width="200" height="40px" flexDirection="column">
+                        <Typo left="10px" fontWeight="700" size="15px">
+                          {comment.comment}
+                        </Typo>
+                        <Typo left="10px" fontWeight="400" size="14px">
+                          {comment.userId} •
+                          <Typo left="10px" fontWeight="400" size="14px">
+                            {comment.date}
+                          </Typo>
+                        </Typo>
+                      </Box>
+                    </VoteList>
+                  ))}
+                </CommentBox>
+              </Box>
+            </TextContainer>
 
-                    <Comment.Text>응원합니다!</Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                </Comment>
-
-                <Comment>
-                  <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                  <Comment.Content>
-                    <Comment.Author>
-                      네잎클로버{" "}
-                      <Comment.Metadata>
-                        <div>1일 전</div>
-                      </Comment.Metadata>
-                    </Comment.Author>
-
-                    <Comment.Text>
-                      밥 많이 먹고 공부에 열중했으면 좋겠어요~
-                    </Comment.Text>
-                    <Comment.Actions>
-                      <Comment.Action>Reply</Comment.Action>
-                    </Comment.Actions>
-                  </Comment.Content>
-                </Comment>
-
-                <Form reply>
-                  <Form.TextArea />
-                  <Button
-                    content="댓글입력"
-                    labelPosition="left"
-                    icon="edit"
-                    primary
-                  />
-                </Form>
-              </Comment.Group>
               <Line />
               <Blank />
               <Typo size="15px" left="0px" top="0px">
@@ -178,7 +219,6 @@ export const ProgressDetail = () => {
                 {selectedContent.organization}
               </Typo>
               <Line />
-            </CommentContainer>
           </GridItem>
 
           <GridItem2>
@@ -209,77 +249,32 @@ export const ProgressDetail = () => {
                 </VoteAcoountButton>
               </VoteContainer2>
               <Blank />
-
-              <CommentContainer2>
-                <Comment.Group>
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        네잎클로버
-                        <Comment.Metadata>
-                          <div> · 1일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>200,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        숨은천사
-                        <Comment.Metadata>
-                          <div> · 1일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>2,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        공소연
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>150,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        박지형
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>100원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-
-                  <Comment>
-                    <Comment.Avatar as="a" src="/후원 그림.svg" alt="댓글" />
-                    <Comment.Content>
-                      <Comment.Author>
-                        최예인
-                        <Comment.Metadata>
-                          <div> · 3일 전</div>
-                        </Comment.Metadata>
-                      </Comment.Author>
-                      <Comment.Text>500,000원</Comment.Text>
-                    </Comment.Content>
-                  </Comment>
-                </Comment.Group>
-              </CommentContainer2>
-
-              <ButtonContainer2>
+              <ListBox>
+                {List.map((voted, index) => (
+                  <VoteList key={index}>
+                    <Box
+                      width="40px"
+                      height="40px"
+                      borderRadius="20px"
+                      background="#F1F1F1"
+                    >
+                      <img src="/vote.svg" />
+                    </Box>
+                    <Box width="200" height="40px" flexDirection="column">
+                      <Typo left="10px" fontWeight="400" size="15px">
+                        {voted.userId}
+                      </Typo>
+                      <Typo left="10px" fontWeight="700" size="14px" margin-bottom="10px">
+                        {voted.howMany}개&nbsp;&nbsp;&nbsp;&nbsp;•
+                        <Typo left="10px" fontWeight="400" size="14px">
+                          {voted.date}
+                        </Typo>
+                      </Typo>
+                    </Box>
+                  </VoteList>
+                ))}
+              </ListBox>
+              {/* <ButtonContainer2>
                 <Button basic color="green">
                   모두보기
                 </Button>
@@ -288,9 +283,9 @@ export const ProgressDetail = () => {
                     ☆기부순위 보러가기
                   </Button>
                 </Link>
-              </ButtonContainer2>
+              </ButtonContainer2>*/}
             </VoteContainer>
-            </GridItem2>
+          </GridItem2>
         </GridContainer>
       </BackContainer>
     </Root>
