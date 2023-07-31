@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, {useState } from "react";
+import { useParams} from "react-router-dom";
 import { contents, List} from "../../utils/ProgressDetail";
 import {
   Root,
@@ -19,11 +19,7 @@ import {
   VoteCoinButton,
   VoteAcoountButton,
   ButtonContainer,
-  ButtonContainer2,
-  CommentContainer,
-  ManagerContainer,
   VoteContainer2,
-  CommentContainer2,
   FullBar,
   Bar,
   OrangeButton,
