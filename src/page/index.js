@@ -9,7 +9,7 @@ export { WaitingDetail } from "./WaitingDetail";
 export { Transaction } from "./Transaction";
 export { Token } from "./Token";
 export { Inquiry } from "./Inquiry";
-export { Nft } from "./Nft";
+export { NFT } from "./NFT";
 export { Throw } from "./Throw";
 export { Wallet } from "./Wallet";
 export { FAQ } from "./FAQ";
