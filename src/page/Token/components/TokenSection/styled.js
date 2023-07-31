@@ -73,7 +73,7 @@ export const NotiTitle = styled.h3`
   line-height: normal;
   color: #000000;
   margin-left: 0px; // 아이콘과 문구 사이의 간격
-  margin-top: 24px;
+  margin-top: 15px;
   align-items: flex-start;
 `;
 
@@ -83,6 +83,7 @@ export const NotiIcon = styled.div`
   background-size: contain;
   height: 36px;
   width: 36px;
+  margin-top: 17px;
   margin-right: 5px;
 `;
 
@@ -92,7 +93,7 @@ export const NotiDescriptionContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  margin-top: -20px;
+  margin-top:  5px;
   margin-left: 10px;
 `;
 
