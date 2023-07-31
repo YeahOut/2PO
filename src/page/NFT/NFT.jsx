@@ -15,7 +15,7 @@ export const NFT = () => {
         subtitle="NFT 발급에 대해서 알려드립니다."
       />
  < Div1>      
-      <Content src="/Nft.png">
+      <Content src="/NFT 안내 페이지 (3).png">
       </Content>
       </Div1>      
     </Root>
