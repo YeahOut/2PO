@@ -108,7 +108,6 @@ export const Box = styled.div`
   border-radius: ${(props) => props.borderRadius || "none"};
   flex-shrink: 0;
   ${customMargin}
-  margin-left: 7px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -233,3 +232,38 @@ export const CommentBox = styled.div`
          gap: 20px;
          padding-top: 10px;
        `;
+
+       export const CloseButton = styled.button`
+       display: flex;
+       width: 120px;
+       height: 35px;
+       flex-shrink: 0;
+       border-radius: 10px;
+       background: ${(props) => props.background || "#6B7280"};
+       align-items: center;
+       justify-content: center;
+       top: "10px";
+       ${customMargin}
+     `;
+     
+     export const ModalContent = styled.div`
+     display:flex;
+     flex-direction: column;
+       width: 500px;
+       height: 380px;
+       flex-shrink: 0;
+       border: 1px solid #e5e7eb;
+       background: #fff;
+       align-items: center;
+     `;
+     
+     export const Input = styled.input`
+       width: 400px;
+       height: 40px;
+       flex-shrink: 0;
+       border-radius: 10px;
+       background: #e5e7eb;
+     `;
+     
+
+     
