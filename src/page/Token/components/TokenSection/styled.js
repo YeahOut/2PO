@@ -54,14 +54,15 @@ export const NotiBeforeDonationContainer = styled.div`
   background: rgba(255, 116, 37, 0.1);
   align-items: flex-start;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 20px;
 `;
 
 export const NotiTitleContainer = styled.div`
   display: flex;
   flex-direction: row; // 문구와 아이콘을 가로로 나란히
-  align-items: center; // 세로 중앙 정렬 (문구와 아이콘)
+  align-items: center;
+  margin-top:-20px; // 세로 중앙 정렬 (문구와 아이콘)
 `;
 
 export const NotiTitle = styled.h3`
@@ -70,9 +71,9 @@ export const NotiTitle = styled.h3`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-  font-color: #000000;
+  color: #000000;
   margin-left: 0px; // 아이콘과 문구 사이의 간격
-  margin-top: 3px;
+  margin-top: 15px;
   align-items: flex-start;
 `;
 
@@ -82,6 +83,7 @@ export const NotiIcon = styled.div`
   background-size: contain;
   height: 36px;
   width: 36px;
+  margin-top: 17px;
   margin-right: 5px;
 `;
 
@@ -91,7 +93,7 @@ export const NotiDescriptionContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top:  5px;
   margin-left: 10px;
 `;
 
@@ -131,7 +133,7 @@ export const IntroTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-: 20px;
+  margin-top: 20px;
 `;
 
 //지갑연동 버튼
@@ -145,7 +147,7 @@ export const ConnectWallet = styled.div`
   height: 48px;
   flex-shrink: 0;
   border-radius: 40px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);\
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin-left: 30px;
 `;
@@ -224,7 +226,7 @@ export const VoteNextDonationImg1 = styled.div`
   height: 331px;
   flex-shrink: 0;
   border-radius: 40px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);\
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
 `;
 export const VoteNextDonationImg2 = styled.div`
@@ -236,9 +238,8 @@ export const VoteNextDonationImg2 = styled.div`
   height: 331px;
   flex-shrink: 0;
   border-radius: 40px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);\
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
-  
 `;
 
 export const DonateOngoingImg1 = styled.div`

@@ -69,7 +69,7 @@ export const TypoBox = styled.div`
   padding: 35px 15px;
   flex-direction: column;
   align-items: center;
-  gap: 17px;
+  gap: 25px;
   border-radius: 35.566px;
   border: 1.111px solid rgba(25, 24, 37, 0.1);
   background: #fff;
@@ -100,7 +100,7 @@ export const ImgBackground = styled.div`
   border-radius: 278.355px 0px 0px 269px;
   background: #fcede2;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-top: 60px;
+  margin-top: 50px;
 `;
 
 export const Img = styled.img`
