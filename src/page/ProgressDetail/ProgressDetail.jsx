@@ -72,6 +72,35 @@ export const ProgressDetail = () => {
     setCommentValue("");
   };
 
+//공유하기 팝업
+  
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const handleShareButtonClick = () => {
+    setPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+  };
+
+  const shareToKakaoTalk = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
+  const shareToInstagram = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+  const shareToTwitter = () => {
+    // 카카오톡 공유하기 기능을 구현하는 함수
+    const kakaoLink = `https://story.kakao.com/share?url=${encodeURIComponent(window.location.href)}`;
+    window.open(kakaoLink, '_blank');
+  };
+
   const { id } = useParams();
   const index = parseInt(id);
   const selectedContent = contents[index];
@@ -252,7 +281,7 @@ export const ProgressDetail = () => {
                   </VoteList>
                 ))}
               </ListBox>
-              <Link to={`/progress`}>
+              <Link to={`/rank`}>
                 <Button2>
                   <img src="/star.svg" />
                   <Typo color="#333" size="15px" fontWeight="700" top="5px">
@@ -264,7 +293,6 @@ export const ProgressDetail = () => {
           </GridItem>
         </GridContainer>
       </BackContainer>
-    </Root>
+      </Root>
       );
     };
-    

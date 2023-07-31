@@ -10,7 +10,8 @@ const fontWeight = css`
   font-weight: ${(props) => props.fontWeight || "600"};
 `;
 
-export const Root = styled.div``;
+export const Root = styled.div`
+`;
 
 export const BackContainer = styled.div`
   width: 100%;
