@@ -10,7 +10,6 @@ export const Throw = () => {
         subtitle="여러분들의 소중한 기부금이 어떻게 전달되는지 알려드리겠습니다"
       />
       
-
     </Root>
   );
 };

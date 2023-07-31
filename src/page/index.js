@@ -10,3 +10,4 @@ export { Transaction } from "./Transaction";
 export { Token } from "./Token";
 export { Inquiry } from "./Inquiry";
 export { Throw } from "./Throw";
+export { Wallet } from "./Wallet";
