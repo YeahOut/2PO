@@ -17,7 +17,7 @@ import {
   VoteContainer,
   TextContainer,
   VoteCoinButton,
-  VoteAcoountButton,
+  ShareButton,
   ButtonContainer,
   ButtonContainer2,
   CommentContainer,
@@ -35,12 +35,39 @@ import {
   CommentBox,
 } from "./styled";
 
-import {
-  Item
-} from "semantic-ui-react";
-
 
 export const ProgressDetail = () => {
+{/*
+  const [scrollY, setScrollY] = useState(0);
+  const [voteContainerTop, setVoteContainerTop] = useState(0);
+  const voteContainerHeight = 670; // VoteContainer의 높이 설정 (고정값 또는 동적으로 계산된 값)
+  const windowHeight = window.innerHeight;
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const gridItem = document.getElementById("grid-item");
+    const gridItemRect = gridItem.getBoundingClientRect();
+    const voteContainerTop = gridItemRect.top + scrollY;
+
+    // VoteContainer가 화면 밖으로 벗어나지 않도록 제한
+    const maxTop = windowHeight - voteContainerHeight - 40;
+    const limitedVoteContainerTop = Math.min(maxTop, voteContainerTop);
+
+    setVoteContainerTop(limitedVoteContainerTop);
+  }, [scrollY]);
+
+*/}
+
   const [commentValue, setCommentValue] = useState([]);
 
   // 댓글 입력 값이 변경될 때 호출되는 함수
@@ -93,11 +120,11 @@ export const ProgressDetail = () => {
                   코인으로 후원하기
                 </Typo>
               </VoteCoinButton>
-              <VoteAcoountButton top="32px" >
+              <ShareButton top="32px" >
                 <Typo size="15px" fontWight="700" color="#000">
-                  계좌로 후원하기
+                  공유하기
                 </Typo>
-              </VoteAcoountButton>
+              </ShareButton>
             </ButtonContainer>
             <Line />
 {/*
@@ -119,7 +146,6 @@ export const ProgressDetail = () => {
             </ManagerContainer>
             <Line />
   */}
-
 
               <Box width="800px" height="auto" flexDirection="column">
               <Typo size="23px" fontWeight="600" top="25px" bottom="20px">
@@ -242,11 +268,11 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                     코인으로 후원하기
                   </Typo>
                 </VoteCoinButton>
-                <VoteAcoountButton top="15px">
+                <ShareButton top="15px">
                   <Typo size="15px" fontWight="700" color="#000">
-                    계좌로 후원하기
+                    공유하기
                   </Typo>
-                </VoteAcoountButton>
+                </ShareButton>
               </VoteContainer2>
               <Blank />
               <ListBox>
@@ -274,16 +300,13 @@ height="auto" width="300px" bottom="20px" flexDirection="column">
                   </VoteList>
                 ))}
               </ListBox>
-              {/* <ButtonContainer2>
-                <Button basic color="green">
-                  모두보기
-                </Button>
+               <ButtonContainer2>
                 <Link to="/rank">
-                  <Button basic color="black">
+                  <Button basic color="black" >
                     ☆기부순위 보러가기
                   </Button>
                 </Link>
-              </ButtonContainer2>*/}
+              </ButtonContainer2>
             </VoteContainer>
           </GridItem2>
         </GridContainer>
