@@ -41,7 +41,7 @@ root.render(
           <Route path="/throw" element={<Throw />} />
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/inquiry" element={<Inquiry />}/>
-          <Route path="/donate" element={<NFT />}/>
+          <Route path="/nft" element={<NFT />}/>
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/Intro" element={<Intro/>} />
