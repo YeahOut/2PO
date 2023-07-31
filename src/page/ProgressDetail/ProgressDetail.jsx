@@ -19,11 +19,13 @@ import {
   Bar,
   VoteList,
   ListBox,
-  Button,
+  Button2,
   Comment,
   CommentBox,
   Box
 } from "./styled";
+
+import { Header, Button, Popup, Grid } from 'semantic-ui-react'
 
 export const ProgressDetail = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -125,11 +127,11 @@ export const ProgressDetail = () => {
                   </Typo>
                 </Box>
               </Box>
-              <Button top="35px" width="120px" height="40px">
+              <Button2 top="35px" width="120px" height="40px">
                 <Typo color="#333" size="15px" fontWeight="700" top="7px">
                   연락하기
                 </Typo>
-              </Button>
+              </Button2>
             </Box>
             <TextContainer width="800px" height="auto">
               <Typo color="#333" size="22px" fontWeight="600" top="20px">
@@ -251,12 +253,12 @@ export const ProgressDetail = () => {
                 ))}
               </ListBox>
               <Link to={`/progress`}>
-                <Button>
+                <Button2>
                   <img src="/star.svg" />
                   <Typo color="#333" size="15px" fontWeight="700" top="5px">
                   기부순위 보러가기
                   </Typo>
-                </Button>
+                </Button2>
               </Link>
             </VoteContainer>
           </GridItem>
