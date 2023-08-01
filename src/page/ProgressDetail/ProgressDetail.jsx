@@ -3,6 +3,7 @@ import { Modal } from "./Modal/Modal";
 import { useParams, Link } from "react-router-dom";
 import { contents, List } from "../../utils/ProgressDetail";
 import "./style.css"
+import CoinAPI, {options} from "./CoinAPI/CoinAPI";
 import {
   Root,
   TopBox,
@@ -37,16 +38,10 @@ import { Dropdown, Menu } from 'semantic-ui-react'
 
 export const ProgressDetail = () => {
 
-  const options = [
-    "비트코인",
-    "이더리움",
-    "테더",
-    // Add more options as needed
-  ];
-  const [selectedOption, setSelectedOption] = useState(options[0]); // Set the initial selected option to the first one in the array
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  const [selectedOption, setSelectedOption] = useState(options[0].value); // Set the initial selected option to the first one in the array
+const handleOptionChange = (event) => {
+  setSelectedOption(event.target.value); // 선택된 옵션의 value를 설정합니다.
+};
 
   //모달창
   const [showFirstModal, setShowFirstModal] = useState(false); // 첫 번째 모달 상태
@@ -123,6 +118,18 @@ export const ProgressDetail = () => {
   const index = parseInt(id);
   const selectedContent = contents[index];
 
+     const totalDonationNumber = parseFloat(
+       selectedContent.totalDonation.replace(/,/g, "")
+     );
+     const targetDonationNumber = parseFloat(
+       selectedContent.targetDonation.replace(/,/g, "")
+     );
+
+          const commentValueNumber = parseFloat(
+            commentValue.replace(/,/g, "")
+          );
+
+          let coinAPI = CoinAPI({ selectedOption });
   return (
     <Root>
       <BackContainer>
@@ -147,19 +154,16 @@ export const ProgressDetail = () => {
                 {selectedContent.text}
               </Typo>
               <ButtonContainer>
-
                 <OrangeButton onClick={handleOpenFirstModal} top="32px">
                   <Typo size="15px" fontWeight="700" color="#fff" top="5px">
                     코인으로 기부하기
                   </Typo>
                 </OrangeButton>
-
                 {showFirstModal && (
                   <Modal
                     isOpen={showFirstModal}
                     onClose={handleCloseFirstModal}
                   >
-
                     <ModalContent>
                       <Typo
                         size="20px"
@@ -172,7 +176,12 @@ export const ProgressDetail = () => {
                         코인 종류를 선택해주세요.
                       </Typo>
                       <label htmlFor="dropdown"></label>
-                      <select id="dropdown" value={selectedOption} onChange={handleOptionChange} className="dropdown-menu">
+                      <select
+                        id="dropdown"
+                        value={selectedOption}
+                        onChange={handleOptionChange}
+                        className="dropdown-menu"
+                      >
                         {options.map((option, index) => (
                           <option key={index} value={option}>
                             {option}
@@ -197,15 +206,40 @@ export const ProgressDetail = () => {
                         background="#E5E7EB"
                         placeholder="투표할 수량을 입력해주세요"
                       />
-                      <Typo size="13px" color="#647488" top="10px" right="-290px">
-                        {commentValue}
+                      <Typo
+                        size="13px"
+                        color="#647488"
+                        top="10px"
+                        right="-290px"
+                      >
+                        KRW: {(coinAPI * commentValueNumber).toFixed(2)}원
                       </Typo>
-                      <Box width="400px" height="auto" gap="20px" >
-                        <Typo size="16px" color="#647488" top="20px" bottom="10px" left="30px" right="30px">
-                          모금 비율: 0.3%
+                      <Box width="450px" height="auto" gap="20px">
+                        <Typo
+                          size="16px"
+                          color="#647488"
+                          top="20px"
+                          bottom="10px"
+                          left="30px"
+                          right="30px"
+                        >
+                          모금 비율:{" "}
+                          {(
+                            ((totalDonationNumber +
+                              coinAPI * commentValueNumber) /
+                              targetDonationNumber) *
+                            100
+                          ).toFixed(2)}
+                          %
                         </Typo>
-                        <Typo size="16px" color="#647488" top="20px" bottom="10px">
-                          지급 예정 토큰: 120PO (2PO)
+                        <Typo
+                          size="16px"
+                          color="#647488"
+                          top="20px"
+                          bottom="10px"
+                        >
+                          지급 예정 토큰:{" "}
+                          {(coinAPI * commentValueNumber).toFixed(0)}PO
                         </Typo>
                       </Box>
                       <Box
@@ -251,8 +285,8 @@ export const ProgressDetail = () => {
                       </Typo>
                       <Image2 src="/donate.png" />
                       <Typo size="16px" color="#333" bottom="20px" top="30px">
-                        모든 거래는 블록체인 상에서
-                        안전하게 거래되고 투명하게 공개됩니다.
+                        모든 거래는 블록체인 상에서 안전하게 거래되고 투명하게
+                        공개됩니다.
                       </Typo>
                       <Box
                         width="400px"
@@ -267,7 +301,7 @@ export const ProgressDetail = () => {
                           onClick={handleCloseSecondModal}
                           left="140px"
                         >
-                          <Typo size="15px" fontWeight="700" color="#fff" >
+                          <Typo size="15px" fontWeight="700" color="#fff">
                             확인
                           </Typo>
                         </CloseButton>
@@ -276,7 +310,7 @@ export const ProgressDetail = () => {
                   </Modal>
                 )}
 
-                <ShareButton top="32px" >
+                <ShareButton top="32px">
                   <Typo size="15px" fontWeight="700" color="#000" top="5px">
                     공유하기
                   </Typo>
@@ -373,11 +407,10 @@ export const ProgressDetail = () => {
 
           <GridItem id="grid-item">
             <VoteContainer style={{ top: `${voteContainerTop}px` }}>
-
               <Box width="313px" height="24px" top="20px">
-
-                <Typo size="20px" fontWight="700" >
-                  {selectedContent.totalDonation}원 / {selectedContent.targetDonation}원
+                <Typo size="20px" fontWight="700">
+                  {selectedContent.totalDonation}원 /{" "}
+                  {selectedContent.targetDonation}원
                 </Typo>
               </Box>
               <FullBar>
@@ -395,11 +428,7 @@ export const ProgressDetail = () => {
               </OrangeButton>
 
               {showFirstModal && (
-                <Modal
-                  isOpen={showFirstModal}
-                  onClose={handleCloseFirstModal}
-                >
-
+                <Modal isOpen={showFirstModal} onClose={handleCloseFirstModal}>
                   <ModalContent>
                     <Typo
                       size="20px"
@@ -412,7 +441,12 @@ export const ProgressDetail = () => {
                       코인 종류를 선택해주세요.
                     </Typo>
                     <label htmlFor="dropdown"></label>
-                    <select id="dropdown" value={selectedOption} onChange={handleOptionChange} className="dropdown-menu">
+                    <select
+                      id="dropdown"
+                      value={selectedOption}
+                      onChange={handleOptionChange}
+                      className="dropdown-menu"
+                    >
                       {options.map((option, index) => (
                         <option key={index} value={option}>
                           {option}
@@ -440,11 +474,23 @@ export const ProgressDetail = () => {
                     <Typo size="13px" color="#647488" top="10px" right="-290px">
                       KRW : 52383.1원
                     </Typo>
-                    <Box width="400px" height="auto" gap="20px" >
-                      <Typo size="16px" color="#647488" top="20px" bottom="10px" left="30px" right="30px">
+                    <Box width="400px" height="auto" gap="20px">
+                      <Typo
+                        size="16px"
+                        color="#647488"
+                        top="20px"
+                        bottom="10px"
+                        left="30px"
+                        right="30px"
+                      >
                         모금 비율: 0.3%
                       </Typo>
-                      <Typo size="16px" color="#647488" top="20px" bottom="10px">
+                      <Typo
+                        size="16px"
+                        color="#647488"
+                        top="20px"
+                        bottom="10px"
+                      >
                         지급 예정 토큰: 120PO (2PO)
                       </Typo>
                     </Box>
@@ -508,7 +554,7 @@ export const ProgressDetail = () => {
                         onClick={handleCloseSecondModal}
                         left="140px"
                       >
-                        <Typo size="15px" fontWeight="700" color="#fff" >
+                        <Typo size="15px" fontWeight="700" color="#fff">
                           확인
                         </Typo>
                       </CloseButton>
