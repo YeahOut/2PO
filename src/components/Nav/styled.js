@@ -44,13 +44,13 @@ export const NavItem = styled.div`
   position: relative;
   cursor: pointer;
   &:first-of-type {
-    /* margin-bottom: 10px; */
+    margin-bottom: 9px;
   }
 `;
 
 export const Tooltip = styled.div`
   position: absolute;
-  top: 140%;
+  top: 120%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
