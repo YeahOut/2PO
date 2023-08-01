@@ -18,6 +18,7 @@ export const contents = [
     categories: ["all", "disaster"],
     date: "2023년",
     manager:"김수민",
+    address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
     text: `저희 지역은 최근 폭우로 인한 피해로 큰 고통을 겪고 있습니다. 
            많은 가정들이 물에 잠기고, 소중한 물건들을 잃어버리며 집을 잃게 되었습니다. 그중 하나가 바로 저희 가정입니다.
            이 글을 쓰는 순간에도 많은 가정들이 위급한 상황에 처해있습니다. 
@@ -72,6 +73,8 @@ export const contents = [
     categories: ["all", "weak"],
     date: "2023년",
     manager:"박정우",
+    address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
+
     text: `규민이는 아무런 잘못이 없음에도 불구하고, 가난과 궁핍함으로 인해 매일매일 배고픔과 싸워야 합니다. 
            아침이면 한 끼의 식사를 위해 눈을 뜨지만, 라면이나 인스턴트 식품으로 배를 채울 수 밖에 없습니다. 
            그럼에도 불구하고 규민이는 포기하지 않고 용기와 희망을 가지고 살아가고 있습니다. 
@@ -125,6 +128,8 @@ export const contents = [
     categories: ["all", "weak"],
     date: "2023년",
     manager:"이서윤",
+    address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
+
     text: `올해도 어김없이 뜨거운 여름철이 찾아왔습니다. 특히 우리 어르신들은 더위로 인해 힘들어하고 계실 것입니다. 
            '사랑의 선풍기 기부 캠페인'을 시작합니다. 
            이번 캠페인은 우리 지역 어르신들에게 선풍기를 지원하여 더위를 덜어주는 작은 도움을 드리고자 합니다.
@@ -177,6 +182,8 @@ export const contents = [
     categories: ["all", "weak", "medical"],
     date: "2023년",
     manager:"김도윤",
+    address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
+
     text: `정우는 지난 몇 달 동안 건강 상태가 더욱 악화되었습니다. 정우는 소아암 환아로 치료 비용은 상당히 부담스러운 상황입니다. 
            이런 어려운 시기에 우리의 도움이 정우에게 큰 응원이 될 수 있습니다.
            하지만 우리는 혼자서는 모든 것을 할 수 없습니다. 여러분의 따뜻한 마음과 아무리 작은 기부라도 큰 도움이 될 것입니다.
@@ -230,6 +237,8 @@ export const contents = [
     categories: ["all", "environment"],
     date: "2023년",
     manager:"서민기",
+    address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
+
     text: `미세먼지로 인한 환경 오염은 우리가 직접적으로 개입할 수 있는 문제이기도 합니다. 
            우리의 작은 노력이 모여 큰 변화를 만들 수 있습니다. 
            그렇기에 저희는 여러분들의 따뜻한 마음과 도움을 기다리고 있습니다.
@@ -285,6 +294,8 @@ export const contents = [
             targetDonation: "2,000,000",
             categories: ["all", "animal", "medical"],
             date: "2023년",
+            address: "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a",
+
             text: `우리 사랑하는 반려견 코코가 응급한 상태에 처해있습니다. 
                    코코는 우리 가족의 소중한 구성원으로서 항상 행복한 시간을 함께 나누었습니다. 
                    하지만 현재 건강이 위태롭고, 의료 비용이 절실한 상황입니다.
