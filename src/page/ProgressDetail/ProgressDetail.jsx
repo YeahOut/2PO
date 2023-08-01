@@ -421,7 +421,7 @@ const handleOptionChange = (event) => {
                   30명 기부
                 </Typo>
               </Box>
-              <OrangeButton onClick={handleOpenFirstModal} top="15px">
+              <OrangeButton onClick={handleOpenFirstModal} top="10px">
                 <Typo size="15px" fontWeight="700" color="#fff" top="5px">
                   코인으로 기부하기
                 </Typo>
@@ -562,7 +562,7 @@ const handleOptionChange = (event) => {
                   </ModalContent>
                 </Modal>
               )}
-              <ShareButton bottom="10px">
+              <ShareButton>
                 <Typo size="15px" fontWight="700" color="#000" top="5px">
                   공유하기
                 </Typo>
