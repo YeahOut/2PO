@@ -261,6 +261,7 @@ export const CommentBox = styled.div`
        border: 1px solid #e5e7eb;
        background: #fff;
        align-items: center;
+       border-radius: 20px;
      `;
      
      export const Input = styled.input`

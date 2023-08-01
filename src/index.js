@@ -41,7 +41,7 @@ root.render(
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/inquiry" element={<Inquiry />} />
           <Route path="/NFT" element={<NFT/>} />
-          <Route path="/intro" element={<Intro />} />
+          <Route path="/Intro" element={<Intro />} />
           <Route path="/Wallet" element={<Wallet />} />
         </Route>
       </Routes>
