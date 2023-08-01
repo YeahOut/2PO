@@ -531,8 +531,11 @@ export const ProgressDetail = () => {
   const handleDonation = async () => {
     try {
       const accounts = await web3.eth.getAccounts(); // 사용자 계정 가져오기
-      const sender = accounts[0]; // 보내는 사람의 주소
+      const sender ="0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a";
+
+      //const sender = accounts[0]; // 보내는 사람의 주소
       const receiver = selectedContent.address; //{selectedContent.address}; // 기부 대상자 지갑 주소
+      console.log("보내는 사람 주소 ", sender);
       console.log("기부 대상자 지갑주소 진짜: ", receiver);
       const amount = web3.utils.toWei(
         /*이더리움의 양*/ donationAmount,
@@ -548,6 +551,7 @@ export const ProgressDetail = () => {
     } catch (err) {
       console.error(err);
     }
+  };
     // 2) 이전
     /*  await contract.methods
       .sendEther(receiver)
@@ -567,9 +571,10 @@ export const ProgressDetail = () => {
       .then((receipt) => {
         console.log(receipt);
       }); */
-  };
+
 
   //-- 컨트랙트 관련
+
   const [selectedOption, setSelectedOption] = useState(options[0].value); // Set the initial selected option to the first one in the array
 const handleOptionChange = (event) => {
   setSelectedOption(event.target.value); // 선택된 옵션의 value를 설정합니다.
@@ -664,7 +669,7 @@ const handleOptionChange = (event) => {
           );
 
           let coinAPI = CoinAPI({ selectedOption });
-          
+
   return (
     <Root>
       <BackContainer>
@@ -691,7 +696,7 @@ const handleOptionChange = (event) => {
               <ButtonContainer>
 
                 <OrangeButton onClick={handleOpenFirstModal} top="32px">
-                  <Typo size="15px" fontWeight="700" color="#fff" top="5px">
+                  <Typo size="15px" fontWeight="700" color="#fff" >
                     코인으로 기부하기
                   </Typo>
                 </OrangeButton>
@@ -849,7 +854,7 @@ const handleOptionChange = (event) => {
                 )}
 
                 <ShareButton top="32px">
-                  <Typo size="15px" fontWeight="700" color="#000" top="5px">
+                  <Typo size="15px" fontWeight="700" color="#000">
                     공유하기
                   </Typo>
                 </ShareButton>
