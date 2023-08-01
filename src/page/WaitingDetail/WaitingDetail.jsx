@@ -143,13 +143,13 @@ export const WaitingDetail = () => {
                         fontWeight="700"
                         color="#333"
                         justifyContent="center"
-                        top="60px"
+                        top="30px"
                         bottom="30px"
                       >
                         사용할 토큰을 입력해주세요.
                       </Typo>
-                      <Box width="400px" height="auto" gap="20px">
-                        <Typo size="16px" color="#647488" bottom="10px">
+                      <Box width="400px" height="auto" gap="50px" >
+                        <Typo size="16px" color="#647488" bottom="10px" left="30px">
                           계정: Account1
                         </Typo>
                         <Typo size="16px" color="#647488" bottom="10px">
@@ -199,7 +199,7 @@ export const WaitingDetail = () => {
                         fontWeight="700"
                         color="#333"
                         justifyContent="center"
-                        top="60px"
+                        top="40px"
                         bottom="30px"
                       >
                         투표가 완료되었습니다.

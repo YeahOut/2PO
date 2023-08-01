@@ -74,7 +74,13 @@ export const Image = styled.img`
   height: 450px;
   border-radius: 12px;
 `;
-
+export const Image2 = styled.img`
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center;
+`;
 export const VoteContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -255,6 +261,7 @@ export const CommentBox = styled.div`
        border: 1px solid #e5e7eb;
        background: #fff;
        align-items: center;
+       border-radius: 20px;
      `;
      
      export const Input = styled.input`
