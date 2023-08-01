@@ -94,14 +94,14 @@ export const NavItemText = styled.div`
 `;
 
 export const WalletButton = styled.button`
-  width: 112px;
-  height: 48px;
+  width: 90px;
+  height: 40px;
   border-radius: 10px;
   background: #ff7425;
   color: #fff;
   text-align: center;
   font-family: Noto Sans KR;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   /* margin-left: 10px; */
   transition: 0.3s;
