@@ -2,16 +2,16 @@ import styled, { css } from "styled-components";
 
 const customMargin = css`
   margin: ${(props) =>
-    `${props.top || "0px"} ${props.right || "0px"} ${props.bottom ||
-      "0px"} ${props.left || "0px"}`};
+    `${props.top || "0px"} ${props.right || "0px"} ${props.bottom || "0px"} ${
+      props.left || "0px"
+    }`};
 `;
 
 const fontWeight = css`
   font-weight: ${(props) => props.fontWeight || "600"};
 `;
 
-export const Root = styled.div`
-`;
+export const Root = styled.div``;
 
 export const BackContainer = styled.div`
   width: 100%;
@@ -112,6 +112,7 @@ export const Box = styled.div`
   height: ${(props) => props.height || "0"};
   background: ${(props) => props.background || "none"};
   border-radius: ${(props) => props.borderRadius || "none"};
+  justify-content: ${(props) => props.justifyContent || "none"};
   flex-shrink: 0;
   ${customMargin}
 `;
@@ -122,7 +123,7 @@ export const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: center; /* 수평 가운데 정렬 */
   align-items: center;
-  gap:90px;
+  gap: 90px;
   margin-bottom: 32px;
   justify-content: center; /* 가운데 정렬을 추가 */
 `;
@@ -167,8 +168,8 @@ export const FullBar = styled.div`
 `;
 
 export const Bar = styled.div`
-width: ${(props) => props.width || "200px"};
-height: 25.659px;
+  width: ${(props) => props.width || "200px"};
+  height: 25.659px;
   flex-shrink: 0;
   background: #ff7425;
   border-radius: 5px;
@@ -218,7 +219,7 @@ export const Comment = styled.div`
   border-radius: 12px;
   background: #d9d9d9;
   gap: 40px;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -226,51 +227,53 @@ export const Comment = styled.div`
 `;
 
 export const CommentBox = styled.div`
-         display: flex;
-         flex-direction: column;
-         width: 800px;
-         height: 350px;
-         flex-shrink: 0;
-         background: #fff;
-         margin-top: 20px;
-         margin-bottom: 20px;
-         overflow: auto; /* 스크롤이 생기도록 설정합니다. */
-         gap: 20px;
-         padding-top: 10px;
-       `;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 350px;
+  flex-shrink: 0;
+  background: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: auto; /* 스크롤이 생기도록 설정합니다. */
+  gap: 20px;
+  padding-top: 10px;
+`;
 
-       export const CloseButton = styled.button`
-       display: flex;
-       width: 120px;
-       height: 35px;
-       flex-shrink: 0;
-       border-radius: 10px;
-       background: ${(props) => props.background || "#6B7280"};
-       align-items: center;
-       justify-content: center;
-       top: "10px";
-       ${customMargin}
-     `;
-     
-     export const ModalContent = styled.div`
-     display:flex;
-     flex-direction: column;
-       width: 500px;
-       height: 380px;
-       flex-shrink: 0;
-       border: 1px solid #e5e7eb;
-       background: #fff;
-       align-items: center;
-       border-radius: 20px;
-     `;
-     
-     export const Input = styled.input`
-       width: 400px;
-       height: 40px;
-       flex-shrink: 0;
-       border-radius: 10px;
-       background: #e5e7eb;
-     `;
-     
+export const CloseButton = styled.button`
+  display: flex;
+  width: 120px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: ${(props) => props.background || "#6B7280"};
+  align-items: center;
+  justify-content: center;
+  top: "10px";
+  ${customMargin}
+`;
 
-     
+export const NFTButton = styled(CloseButton)`
+  background: #fff;
+  border: 1px solid #ff7425;
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 380px;
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  align-items: center;
+  border-radius: 20px;
+`;
+
+export const Input = styled.input`
+  width: 400px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e5e7eb;
+`;
