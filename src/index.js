@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import GlobalStyle from "./GlobalStyle";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Layout } from "./Routes/Layout";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import GlobalStyle from './GlobalStyle';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Layout } from './Routes/Layout';
 import {
   Home,
   Behind,
@@ -18,10 +18,11 @@ import {
   Throw,
   NFT,
   Intro,
-  Wallet
-} from "./page";
+  Wallet,
+} from './page';
+import * as serviceWorker from './serviceWorker';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
@@ -40,11 +41,15 @@ root.render(
           <Route path="/throw" element={<Throw />} />
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/inquiry" element={<Inquiry />} />
-          <Route path="/NFT" element={<NFT/>} />
+          <Route path="/NFT" element={<NFT />} />
           <Route path="/Intro" element={<Intro />} />
           <Route path="/Wallet" element={<Wallet />} />
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

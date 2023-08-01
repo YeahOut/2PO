@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Modal } from "./Modal/Modal";
 import { useParams, Link } from "react-router-dom";
 import { contents, List } from "../../utils/ProgressDetail";
-import "./style.css"
-import CoinAPI, {options} from "./CoinAPI/CoinAPI";
+import "./style.css";
+import CoinAPI, { options } from "./CoinAPI/CoinAPI";
 import {
   Root,
   TopBox,
@@ -30,12 +30,29 @@ import {
   CloseButton,
   ModalContent,
   Input,
+  NFTButton,
 } from "./styled";
-import { Dropdown, Menu } from 'semantic-ui-react'
-import Web3 from "web3"
+import Web3 from "web3";
+import useMeowwContract from "../../hooks/useMeowwContract";
 
 export const ProgressDetail = () => {
- // 컨트랙트 관련
+  const { id } = useParams();
+  const index = parseInt(id);
+
+  const imageLinks = [
+    "https://i.ibb.co/nkdBRjr/NFT1-1.png",
+    "https://i.ibb.co/RN3b4nk/NFT1-2.png",
+    "https://i.ibb.co/CBkCqCK/NFT1-3.png",
+    "https://i.ibb.co/4Sybk2M/NFT3-1.png",
+    "https://i.ibb.co/48nDYZc/NFT3-2.png",
+    "https://i.ibb.co/2YPnycn/NFT3-3.png",
+  ];
+
+  const { _, _2, _3, meowwz, mint, isMinting } = useMeowwContract(
+    imageLinks,
+    index
+  );
+  // 컨트랙트 관련
   // Infura Goerli
   const infuraUrl = `https://goerli.infura.io/v3/7f43f66b07a54707985b23f17e60410a`;
   const web3 = new Web3(infuraUrl);
@@ -531,7 +548,7 @@ export const ProgressDetail = () => {
   const handleDonation = async () => {
     try {
       const accounts = await web3.eth.getAccounts(); // 사용자 계정 가져오기
-      const sender ="0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a";
+      const sender = "0x2401bC67706121CCa309d6cd01a05E2fdF9Cff4a";
 
       //const sender = accounts[0]; // 보내는 사람의 주소
       const receiver = selectedContent.address; //{selectedContent.address}; // 기부 대상자 지갑 주소
@@ -552,17 +569,17 @@ export const ProgressDetail = () => {
       console.error(err);
     }
   };
-    // 2) 이전
-    /*  await contract.methods
+  // 2) 이전
+  /*  await contract.methods
       .sendEther(receiver)
       .send({ from: sender, value: amount })
       .then((receipt) => {
         console.log(receipt);
       }); */
 
-    // 1) 이전
+  // 1) 이전
 
-    /*  await web3.eth
+  /*  await web3.eth
       .sendTransaction({
         from: sender,
         to: receiver,
@@ -572,13 +589,12 @@ export const ProgressDetail = () => {
         console.log(receipt);
       }); */
 
-
   //-- 컨트랙트 관련
 
   const [selectedOption, setSelectedOption] = useState(options[0].value); // Set the initial selected option to the first one in the array
-const handleOptionChange = (event) => {
-  setSelectedOption(event.target.value); // 선택된 옵션의 value를 설정합니다.
-};
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value); // 선택된 옵션의 value를 설정합니다.
+  };
 
   //모달창
   const [showFirstModal, setShowFirstModal] = useState(false); // 첫 번째 모달 상태
@@ -602,12 +618,11 @@ const handleOptionChange = (event) => {
 
   const handleCloseAndOpen = () => {
     setShowFirstModal(false);
-     // 2초 뒤 두 번째 모달 열기
-     setTimeout(() => {
+    // 2초 뒤 두 번째 모달 열기
+    setTimeout(() => {
       setShowSecondModal(true); //두 번쨰 모달을 엽니다.
-    }, 2000);   };
-
-
+    }, 2000);
+  };
 
   const [scrollY, setScrollY] = useState(0);
   const [voteContainerTop, setVoteContainerTop] = useState(0);
@@ -624,6 +639,11 @@ const handleOptionChange = (event) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // NFT가 발행되었을 때 호출되는 함수
+  useEffect(() => {
+    console.log(meowwz);
+  }, [meowwz]);
 
   useEffect(() => {
     const gridItem = document.getElementById("grid-item");
@@ -653,22 +673,18 @@ const handleOptionChange = (event) => {
     setCommentValue("");
   };
 
-  const { id } = useParams();
-  const index = parseInt(id);
   const selectedContent = contents[index];
 
-     const totalDonationNumber = parseFloat(
-       selectedContent.totalDonation.replace(/,/g, "")
-     );
-     const targetDonationNumber = parseFloat(
-       selectedContent.targetDonation.replace(/,/g, "")
-     );
+  const totalDonationNumber = parseFloat(
+    selectedContent.totalDonation.replace(/,/g, "")
+  );
+  const targetDonationNumber = parseFloat(
+    selectedContent.targetDonation.replace(/,/g, "")
+  );
 
-          const commentValueNumber = parseFloat(
-            donationAmount.replace(/,/g, "")
-          );
+  const commentValueNumber = parseFloat(donationAmount.replace(/,/g, ""));
 
-          let coinAPI = CoinAPI({ selectedOption });
+  let coinAPI = CoinAPI({ selectedOption });
 
   return (
     <Root>
@@ -694,9 +710,8 @@ const handleOptionChange = (event) => {
                 {selectedContent.text}
               </Typo>
               <ButtonContainer>
-
                 <OrangeButton onClick={handleOpenFirstModal} top="32px">
-                  <Typo size="15px" fontWeight="700" color="#fff" >
+                  <Typo size="15px" fontWeight="700" color="#fff">
                     코인으로 기부하기
                   </Typo>
                 </OrangeButton>
@@ -741,7 +756,7 @@ const handleOptionChange = (event) => {
                         기부 수량을 입력해주세요.
                       </Typo>
 
-                   <Input
+                      <Input
                         type="text"
                         value={donationAmount} // 기부 수량 값
                         onChange={handleDonationAmountChange} // 기부 수량 값 변경 이벤트 처리 함수
@@ -826,7 +841,9 @@ const handleOptionChange = (event) => {
                       >
                         후원해주셔서 감사합니다.
                       </Typo>
-                      <Image2 src="/donate.png" />
+                      <Image2
+                        src={isMinting ? imageLinks[index] : "/donate.png"}
+                      />
                       <Typo size="16px" color="#333" bottom="20px" top="30px">
                         모든 거래는 블록체인 상에서 안전하게 거래되고 투명하게
                         공개됩니다.
@@ -842,12 +859,25 @@ const handleOptionChange = (event) => {
                         <CloseButton
                           background="#FF7425"
                           onClick={handleCloseSecondModal}
-                          left="140px"
+                          right="2px"
                         >
                           <Typo size="15px" fontWeight="700" color="#fff">
                             확인
                           </Typo>
                         </CloseButton>
+                        <NFTButton
+                          type="submit"
+                          left="2px"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            mint();
+                          }}
+                          disabled={isMinting}
+                        >
+                          <Typo size="15px" fontWeight="700" color="#ff7425">
+                            NFT 발행
+                          </Typo>
+                        </NFTButton>
                       </Box>
                     </ModalContent>
                   </Modal>
