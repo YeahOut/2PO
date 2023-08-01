@@ -58,8 +58,7 @@ export const TokenInfo = () => {
             2PlusOne(2PO)토큰을 드립니다.
           </NotiDescription>
           <NotiDescription>
-            3. SBT 발행은 기부금이 기부 대상자에게 완전히 전달된 이후에
-            가능합니다. 기부 진행상황 보기
+            3. NFT는 기부한 즉시 발행 가능합니다. 기부 진행상황 보기
           </NotiDescription>
         </NotiDescriptionContainer>
       </NotiBeforeDonationContainer>
@@ -95,12 +94,11 @@ export const TokenInfo = () => {
         </ImgContianerdRow>
         <IntroTitle id={sectionIds[2]}>3. 기부 프로젝트 선택</IntroTitle>
         <IntroInfoDetail>
-          ‘기부하기’ 카테고리 중 ‘진행중’을 선택합니다. 원하는 양을 정한 후
-          토큰으로 기부하기 버튼을 클릭합니다. 목표금액에 달성하면 사업 종료로
+          ‘기부하기’ 카테고리 중 ‘진행중’을 선택합니다.
+          코인으로 기부하기 버튼을 클릭한 후 원하는 기부 수량을 정합니다. 목표금액에 달성하면 사업 종료로
           바뀐 후 기부금 전달이 시작됩니다. 목표금액에 달성하지 않더라도 사업
           기간이 만료가 되면 해당 금액만큼 기부금이 기부 대상자에게 전달 됩니다.
-          진행과정은 블록체인을 통해 투명하게 공개됩니다. 관심 있는 프로젝트를
-          별 모양을 클릭하여 즐겨찾기 할 수 있습니다.
+          진행과정은 블록체인을 통해 투명하게 공개됩니다. 
         </IntroInfoDetail>
         <ImgContianerdCol>
           <DonateOngoingImg1 />
